@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  get 'users/:id', to: "users#show"
+  
   root 'top#index'
   
   devise_for :users, controllers: {
-      registrations: 'users/registrations'
+      registrations: 'users/registrations',
+      sessions: 'users/sessions'
   }
-  
+  get 'users/:id', to: "users#show"
 end
