@@ -6,9 +6,9 @@ class ApplicationController < ActionController::Base
   protected
   def configure_permitted_parameters
     # サインアップ時にusernameのストロングパラメータを追加
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :image])
     # アカウント編集の時にusernameのストロングパラメータを追加
-    devise_parameter_sanitizer.permit(:account_update, keys: [:username])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :image])
   end
   
   def after_update_path_for(*)

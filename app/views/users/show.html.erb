@@ -1,3 +1,8 @@
 <h1>Users#show</h1>
 <p>ユーザ名 : <%= @user.username %></p>
 <p>メールアドレス : <%= @user.email %></p>
+<% if @user.image? %>
+  <%= image_tag @user.image.to_s, class: 'mypage-article-img' %>
+<% else %>
+  <p>失敗</p>
+<% end %>

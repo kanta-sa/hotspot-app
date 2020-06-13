@@ -7,6 +7,11 @@
     <%= f.label :username %><br />
     <%= f.text_field :username, autofocus: true %>
   </div>
+  
+  <div class="field">
+    <span>アイコン画像を選択する</span>
+    <%= f.file_field :image %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />
