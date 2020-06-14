@@ -18,6 +18,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post = current_user.posts.find_by(id: params[:id])
+    @post.destroy
+    flash[:notice] = 'メッセージを削除しました。'
+    redirect_back(fallback_location: root_path)
   end
   
   private

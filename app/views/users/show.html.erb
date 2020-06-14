@@ -1,5 +1,5 @@
 <h1>Users#show</h1>
-<p>ユーザ名 : <%= @user.username %></p>
+<p>ユーザ名 : <%= @user.username %><i class="material-icons">favorite</i></p>
 <p>メールアドレス : <%= @user.email %></p>
 <% if @user.image? %>
   <%= image_tag @user.image.to_s, class: 'mypage-article-img' %>
@@ -12,6 +12,7 @@
     <%= post.name %>
     <%= post.information %>
     <%= image_tag post.image.to_s %>
+    <%= link_to "削除", post, method: :delete, data: { confirm: 'You sure?' }, class: 'delete-btn' %>
   <% end %>
 <% end %>
 
