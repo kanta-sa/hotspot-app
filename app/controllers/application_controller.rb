@@ -4,6 +4,12 @@ class ApplicationController < ActionController::Base
   #deviseを利用する機能の時実行される
   before_action :configure_permitted_parameters, if: :devise_controller?
   
+  def counts(user)
+    @count_posts = user.posts.count
+    @count_followings = user.followings.count
+    @count_followers = user.followers.count
+  end
+  
   protected
   def configure_permitted_parameters
     # サインアップ時にusernameのストロングパラメータを追加
