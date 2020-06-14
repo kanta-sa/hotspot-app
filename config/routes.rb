@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
   
+  get 'favorites/create'
+  get 'favorites/destroy'
   root 'top#index'
   
   devise_for :users, controllers: {
@@ -15,5 +17,8 @@ Rails.application.routes.draw do
   end
   resources :relationships, only: [:create, :destroy]
   
-  resources :posts
+  resources :posts, shallow: true do
+    resource :favorites, only: [:create, :destroy]
+    get :favorites, on: :collection
+  end
 end

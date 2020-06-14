@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user
+  has_many :favorites, dependent: :destroy
   validates :name, presence: true, length: {maximum: 20}
   validates :information, presence: true, length: {maximum: 255}
   mount_uploader :image, ImageUploader
@@ -7,4 +8,10 @@ class Post < ApplicationRecord
   #都道府県用
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
+  
+  has_many :favorites, dependent: :destroy
+  
+  def favorite_by?(user)
+    favorites.where(user_id: user.id).exists?
+  end
 end

@@ -30,4 +30,9 @@ class User < ApplicationRecord
   def following?(other_user)
     self.followings.include?(other_user)
   end
+  
+  #favorite機能の実装について
+  has_many :favorites, dependent: :destroy
+  has_many :favorite_of_posts, through: :favorites, source: :post
+
 end
