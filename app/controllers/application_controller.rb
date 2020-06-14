@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
+  #deviseを利用する機能の時実行される
   before_action :configure_permitted_parameters, if: :devise_controller?
   
   protected
@@ -13,6 +14,14 @@ class ApplicationController < ActionController::Base
   
   def after_update_path_for(*)
     user_path(@user)
+  end
+  
+  def after_sign_in_path_for(resource)
+    user_path(@user) # ログイン後に遷移するpathを設定
+  end
+
+  def after_sign_out_path_for(resource)
+    root_path 
   end
   
 end

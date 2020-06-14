@@ -5,8 +5,14 @@
       <p>観光地を知ることができるサイトです。</p>
     </div>
   </div>
-  <%= link_to "新規登録", new_user_registration_path %>
-  <%= link_to "ログイン", new_user_session_path %>
-  <%= link_to "ログアウト", destroy_user_session_path, method: "delete" %>
-  <%= link_to "ユーザー詳細ページ", user_path(current_user) %>
+  
+  
+  <% if user_signed_in? %>
+    <%= link_to "ユーザー詳細ページ", user_path(current_user) %>
+    <%= link_to "編集ページ", edit_user_registration_path(current_user) %>
+    <%= link_to "ログアウト", destroy_user_session_path, method: "delete" %>
+  <% else %>
+    <%= link_to "新規登録", new_user_registration_path %>
+    <%= link_to "ログイン", new_user_session_path %>
+  <% end %>
 </div>
