@@ -1,0 +1,19 @@
+<h1>新規投稿ページ</h1>
+
+
+<%= form_with(model: @post, local: true) do |f| %>
+  <% @post.errors.full_messages.each do |msg| %>
+    <li class="red-text"><%= msg %></li>
+  <% end %>
+  <div class="field">
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.text_area :information %>
+  </div>
+  <div class="field">
+    <%= f.file_field :image %>
+  </div>
+  <%= f.submit %>
+<% end %>
+

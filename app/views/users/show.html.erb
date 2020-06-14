@@ -7,4 +7,14 @@
   <p>失敗</p>
 <% end %>
 
+<% if @user.posts.any? %>
+  <% @user.posts.each do |post| %>
+    <%= post.name %>
+    <%= post.information %>
+    <%= image_tag post.image.to_s %>
+  <% end %>
+<% end %>
+
+<%= link_to '新規投稿', new_post_path %>
+
 <%= link_to 'トップページ', root_path %>
