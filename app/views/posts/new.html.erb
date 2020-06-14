@@ -12,6 +12,9 @@
     <%= f.text_area :information %>
   </div>
   <div class="field">
+    <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, class: '' %>
+  </div>
+  <div class="field">
     <%= f.file_field :image %>
   </div>
   <%= f.submit %>

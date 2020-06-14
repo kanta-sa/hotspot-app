@@ -11,6 +11,7 @@
   <% @user.posts.each do |post| %>
     <%= post.name %>
     <%= post.information %>
+    <%= post.prefecture.name %>
     <%= image_tag post.image.to_s %>
     <%= link_to "削除", post, method: :delete, data: { confirm: 'You sure?' }, class: 'delete-btn' %>
   <% end %>
