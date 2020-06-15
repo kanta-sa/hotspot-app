@@ -1,0 +1,21 @@
+header{
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 0, 0.8);
+  h1{
+    font-size: 1.7rem;
+  }
+  a{
+    line-height: 70px;
+    text-decoration: none;
+  }
+  ul{
+    list-style: none;
+    display: flex;
+    li{
+      margin: 0 3px;
+    }
+  }
+}

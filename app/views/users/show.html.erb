@@ -23,5 +23,6 @@
 
 <%= render 'relationships/follow_button', user: @user %>
 <%= link_to '新規投稿', new_post_path %>
+<%= link_to "編集ページ", edit_user_registration_path(current_user) %>
 
 <%= link_to 'トップページ', root_path %>
