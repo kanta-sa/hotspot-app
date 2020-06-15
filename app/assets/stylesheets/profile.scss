@@ -1,0 +1,40 @@
+.user-detail-wrapper{
+  width: 60%;
+  margin: 2% auto;
+  border: 1px solid black;
+  .user-detail{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    &-left{
+      width: 25%;
+      text-align: center;
+      padding: 1%;
+      .user-image-circle{
+        border-radius: 50%; 
+      }
+    }
+    &-right{
+      width: 50%;
+      ul{
+        width: 70%;
+        list-style: none;
+        border-bottom: 1px solid #330000;
+        margin: 2% 0;
+        li{
+          display: inline-block;
+          margin-right: 3%;
+        }
+      }
+      div{
+        margin: 2% 0;
+        width: 70%;
+        border-bottom: 1px solid #330000;
+      }
+    }
+    
+  }
+  
+  
+  
+}

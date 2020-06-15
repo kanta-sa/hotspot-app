@@ -1,11 +1,29 @@
-<h1>Users#show</h1>
-<p>ユーザ名 : <%= @user.username %><i class="fas fa-heart"></i></p>
-<p>メールアドレス : <%= @user.email %></p>
-<% if @user.image? %>
-  <%= image_tag @user.image.to_s, class: 'mypage-article-img' %>
-<% else %>
-  <p>失敗</p>
-<% end %>
+<div class="user-detail-wrapper">
+  <div class="user-detail">
+    <div class="user-detail-left">
+      <div class="user-image">
+        <% if @user.image? %>
+          <%= image_tag @user.image.to_s, :size => '130x130', class: 'user-image-circle' %>
+        <% else %>
+          <p>失敗</p>
+        <% end %>
+      </div>
+      <div class="user-name">
+        <p><%= @user.username %></p>
+      </div>
+    </div>
+    <div class="user-detail-right">
+      <ul>
+        <li><span><%= @count_followings %></span>フォロー</li>
+        <li><span><%= @count_followers %></span>フォロワー</li>
+      </ul>
+      <div><i class="fas fa-image"></i> 投稿数<span><%= @count_posts %></span></div>
+      <div><i class="fas fa-heart"></i> いいねした数<span><%= @count_favorites %></span></div>
+    </div>
+  </div>
+</div>
+
+
 
 <% if @user.posts.any? %>
   <% @user.posts.each do |post| %>
