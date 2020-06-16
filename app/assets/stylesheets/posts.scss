@@ -1,5 +1,5 @@
 .posts-container{
-  width: 80%;
+  width: 85%;
   margin: 1% auto;
   display: flex;
   flex-direction: row; 
@@ -7,7 +7,7 @@
   .posts-wrapper{
     width: 32%;
     height: 500px;
-    margin: 0 0.5%;
+    margin: 1% 0.5%;
     .picture{
       height: 60%;
       justify-content: center;
@@ -57,7 +57,7 @@
         width: 80%;
         margin-top: 1.5%;
         .title{
-          font-size: 1.3rem;
+          font-size: 1.1rem;
           margin-bottom: 2%;
         }
         ul{
@@ -71,6 +71,25 @@
       
     }
     
+  }
+}
+
+@media (max-width: 1100px){
+  .posts-container{
+    width: 85%;
+    .posts-wrapper{
+      width: 49%;
+    }
+  }
+}
+
+@media (max-width: 700px){
+  .posts-container{
+    width: 95%;
+    .posts-wrapper{
+      width: 90%;
+      margin: 1% auto;
+    }
   }
 }
 

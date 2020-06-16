@@ -3,7 +3,7 @@
     <div class="user-detail-left">
       <div class="user-image">
         <% if @user.image? %>
-          <%= image_tag @user.image.to_s, :size => '130x100', class: 'user-image-circle' %>
+          <%= image_tag @user.image.to_s, :size => '130x130', class: 'user-image-circle' %>
         <% else %>
           <p>失敗</p>
         <% end %>
@@ -16,9 +16,11 @@
       <ul>
         <li><span><%= @count_followings %></span>フォロー</li>
         <li><span><%= @count_followers %></span>フォロワー</li>
+        <li><%= render 'relationships/follow_button', user: @user %></li>
       </ul>
       <div><i class="fas fa-image"></i> 投稿数<span><%= @count_posts %></span></div>
       <div><i class="fas fa-heart"></i> いいねした数<span><%= @count_favorites %></span></div>
+      <div><%= link_to "編集ページ", edit_user_registration_path(current_user) %></div>
     </div>
   </div>
 </div>
@@ -26,23 +28,9 @@
 
 
 <% if @user.posts.any? %>
-  <% @user.posts.each do |post| %>
-    <%= post.name %>
-    <%= post.information %>
-    <%= post.prefecture.name %>
-    <%= image_tag post.image.to_s %>
-    <% if current_user == @user %>
-      <%= link_to post_path(post), method: :deleted, data: { confirm: 'You sure?' } do %>
-        <i class="fas fa-trash"></i>
-      <% end %>
-    <% else %>
-      <%= render 'favorites/favorite_button', post: post %>
-    <% end %>
-  <% end %>
+  <%= render 'posts/posts', posts: @posts %>
 <% end %>
 
-<%= render 'relationships/follow_button', user: @user %>
-<%= link_to '新規投稿', new_post_path %>
-<%= link_to "編集ページ", edit_user_registration_path(current_user) %>
 
-<%= link_to 'トップページ', root_path %>
+
+

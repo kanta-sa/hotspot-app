@@ -1,15 +1,19 @@
 <header>
-  <a href="/" class="logo"><%= image_tag '/images/logo.png', size: '130x50', class: "logo" %></a>
-  <ul>
-    <li><%= link_to "投稿一覧", posts_path %></li>
-    <% if user_signed_in? %>
-      <li><%= link_to "新規投稿", new_post_path %></li>
-      <li><%= link_to "ログアウト", destroy_user_session_path, method: "delete" %></li>
-      <li><%= link_to "詳細ページ", user_path(current_user) %></li>
-      <li><a href="/">通知</a></li>
-    <% else %>
-      <%= link_to "新規登録", new_user_registration_path %>
-      <%= link_to "ログイン", new_user_session_path %>
-    <% end %>
-  </ul>
+  <div class="header-wrapper">
+    <a href="/" class="logo1"><%= image_tag '/images/logo1.png', size: '150x55', class: "logo" %></a>
+    <a href="/" class="logo2"><%= image_tag '/images/logo2.png', size: '150x55', class: "logo" %></a>
+    <ul>
+      <li><%= link_to "投稿一覧", posts_path, class: "nav-link" %></li>
+      <% if user_signed_in? %>
+        <li><%= link_to "新規投稿", new_post_path, class: "nav-link" %></li>
+        <li><%= link_to "ログアウト", destroy_user_session_path, method: "delete", class: "nav-link" %></li>
+        <li><%= link_to "詳細ページ", user_path(current_user), class: "nav-link" %></li>
+        <li><a href="/", class="nav-link">通知</a></li>
+      <% else %>
+        <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
+        <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
+      <% end %>
+    </ul>
+    <div class="menu-bar"><i class="fa fa-bars" aria-hidden="true"></i></div>
+  </div>
 </header>
