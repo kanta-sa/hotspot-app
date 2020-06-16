@@ -3,7 +3,7 @@
     <div class="user-detail-left">
       <div class="user-image">
         <% if @user.image? %>
-          <%= image_tag @user.image.to_s, :size => '130x130', class: 'user-image-circle' %>
+          <%= image_tag @user.image.to_s, :size => '130x100', class: 'user-image-circle' %>
         <% else %>
           <p>失敗</p>
         <% end %>
@@ -32,7 +32,9 @@
     <%= post.prefecture.name %>
     <%= image_tag post.image.to_s %>
     <% if current_user == @user %>
-      <%= link_to "削除", post, method: :delete, data: { confirm: 'You sure?' }, class: 'delete-btn' %>
+      <%= link_to post_path(post), method: :deleted, data: { confirm: 'You sure?' } do %>
+        <i class="fas fa-trash"></i>
+      <% end %>
     <% else %>
       <%= render 'favorites/favorite_button', post: post %>
     <% end %>
