@@ -3,9 +3,9 @@
     <div class="user-detail-left">
       <div class="user-image">
         <% if @user.image? %>
-          <%= image_tag @user.image.to_s, :size => '130x130', class: 'user-image-circle' %>
+          <%= image_tag @user.image.to_s, size: '130x130', class: 'user-image-circle' %>
         <% else %>
-          <p>失敗</p>
+          <%= image_tag '/images/user.png', size: '130x130', class: 'user-image-circle' %>
         <% end %>
       </div>
       <div class="user-name">
@@ -24,7 +24,6 @@
     </div>
   </div>
 </div>
-
 
 
 <% if @user.posts.any? %>

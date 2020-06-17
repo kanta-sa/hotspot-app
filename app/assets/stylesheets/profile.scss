@@ -1,3 +1,4 @@
+$follow: rgb(0, 170, 255);
 .user-detail-wrapper{
   width: 60%;
   margin: 2% auto;
@@ -24,6 +25,23 @@
         li{
           display: inline-block;
           margin-right: 3%;
+          .btn{
+            border: none;
+          }
+          .follow-btn{
+            padding: 1% 2%;
+            background-color: white;
+            color: $follow;
+            border: 2px solid $follow;
+            border-radius: 10% 10% 10% 10% / 50% 50% 50% 50%;
+          }
+          .unfollow-btn{
+            padding: 1% 2%;
+            background-color: $follow;
+            color: white;
+            border: 2px solid $follow;
+            border-radius: 10% 10% 10% 10% / 50% 50% 50% 50%;
+          }
         }
       }
       div{
