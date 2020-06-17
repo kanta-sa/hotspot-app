@@ -51,4 +51,5 @@ production:
   <<: *default
   database: hotspotdb_production
   username: hotspotdb
-  password: <%= ENV['HOTSPOTDB_DATABASE_PASSWORD'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
