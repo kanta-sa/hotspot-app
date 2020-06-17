@@ -6,4 +6,7 @@ ja:
         email: "メールアドレス"
         password: "パスワード"
         password_confirmation: "パスワード確認"
-    
+      post:
+        name: "名称"
+        information: "キャプション"
+        image: "写真"

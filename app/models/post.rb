@@ -4,6 +4,7 @@ class Post < ApplicationRecord
   validates :name, presence: true, length: {maximum: 20}
   validates :information, presence: true, length: {maximum: 255}
   mount_uploader :image, ImageUploader
+  validates :image, presence: true
   
   #都道府県用
   extend ActiveHash::Associations::ActiveRecordExtensions

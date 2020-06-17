@@ -1,0 +1,81 @@
+.post-new-head{
+  width: 70%;
+  margin: 1% auto;
+}
+
+.post-new-wrapper{
+  width: 70%;
+  margin: 3% auto;
+  .post-new-top{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    .left{
+      width: 45%;
+      height: 430px;
+      border: 2px dashed black;
+      border-radius: 3%;
+      cursor: pointer;
+      .image{
+        display: none;
+      }
+      .form-image{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .fa-camera{
+        font-size: 10.0rem;
+        text-align: center;
+      }
+      .help-block{
+        font-size: 1.2rem;
+      }
+    }
+    
+    .right{
+      width: 50%;
+      .form-post-name{
+        margin: 3% 0;
+      } 
+      .text_field{
+        height: 30px;
+        width: 65%;
+        border: none;
+        border-bottom: 1px solid black;
+      }
+      .form-post-info .text_area{
+        width: 65%;
+        height: 250px;
+      }
+    }
+  }
+    
+  .bottom{
+    margin-top: 1%;
+    .form-post-select{
+      width: 45%;
+      .post-new-select{
+      }  
+    }
+  }
+    
+  .post-new-submit{
+    text-align: right;
+    margin-right: 17.5%;
+    .post-btn{
+      border: none;
+      background-color: rgba(255, 226, 0, 1);
+      color: white;
+      padding: 0.5% 5%;
+      box-shadow: 0 2px 2px rgba(0,0,0,0.2), 0 -4px 5px -2px #8c8041 inset;
+      &:hover{
+        box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+      }
+    }
+    
+  }
+  
+}
