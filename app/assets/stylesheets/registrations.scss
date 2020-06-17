@@ -1,12 +1,66 @@
-.registrations-container{
-  width: 50%;
+.registrations-new-head{
+  text-align: center;
+}
+
+.registrations-new-wrapper{
+  width: 60%;
   margin: 3% auto;
-  h2{
-    text-align: center;
+  display: flex;
+  justify-content: space-between;
+  .left{
+    width: 40%;
+    border: 2px dashed black;
+    border-radius: 50%;
+    cursor: pointer;
+    .image{
+      display: none;
+    }
+    .form-image{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .fa-user{
+      font-size: 8.0rem;
+      text-align: center;
+    }
+    .help-block{
+      font-size: 1.1rem;
+    }
+  }
+  .right{
+    width: 50%;
+    .registrations-new-form{
+      width: 80%;
+      margin: 5% 0;
+      label{
+        font-size: 0.8rem;
+        color: rgba(136, 136, 136, 0.7);
+      }
+      .new-form{
+        width: 100%;
+        height: 30px;
+        border: none;
+        border-bottom: 1px solid black;
+      }
+    }
+    
   }
 }
 
-.no-border{
-  border: none;
-  border-bottom: 1px solid black;
+.registrations-new-submit{
+  text-align: center;
+  .registrations-btn{
+    font-size: 1.2rem;
+    border: none;
+    background-color: rgba(255, 226, 0, 1);
+    color: rgb(230, 240, 240);
+    padding: 0.5% 5%;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.2), 0 -4px 5px -2px #8c8041 inset;
+    &:hover{
+      box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+    }
+  }
 }
