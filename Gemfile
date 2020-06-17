@@ -78,3 +78,6 @@ gem "jquery-rails"
 
 gem 'kaminari'
 
+group :production do
+  gem 'rails_12factor'
+end
