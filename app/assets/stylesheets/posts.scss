@@ -74,9 +74,15 @@
   }
 }
 
-@media (max-width: 1100px){
+@media (max-width: 1400px){
   .posts-container{
-    width: 85%;
+    width: 90%;
+  }
+}
+
+@media (max-width: 1150px){
+  .posts-container{
+    width: 90%;
     .posts-wrapper{
       width: 49%;
     }

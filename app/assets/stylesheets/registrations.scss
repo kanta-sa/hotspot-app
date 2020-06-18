@@ -66,6 +66,29 @@
   }
 }
 
+@media (max-width: 1000px){
+  .registrations-new-wrapper{
+    width: 90%;
+    flex-direction: column;
+    .left{
+      width: 50%;
+      margin: 0 auto;
+    }
+    .right{
+      width: 100%;
+      .registrations-new-form{
+        width: 100%;
+      }
+    }
+  }
+  
+  .registrations-new-submit{
+    .registrations-btn{
+      padding: 0.5% 10%;
+    }
+  }
+}
+
 /* registrationsのeditアクション*/
 .registrations-edit-head{
   text-align: center;
@@ -115,17 +138,58 @@
     font-size: 2.0rem;
   }
   .destroy-submit{
-  text-align: right;
-  .destroy-btn{
-    font-size: 1.2rem;
-    border: none;
-    background-color: rgba(255, 226, 0, 1);
-    color: rgb(176, 148, 30);
-    padding: 0.5% 5%;
-    box-shadow: 0 2px 2px rgba(0,0,0,0.2), 0 -4px 5px -2px #8c8041 inset;
-    &:hover{
-      box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+    text-align: right;
+    .destroy-btn{
+      font-size: 1.2rem;
+      border: none;
+      background-color: rgba(255, 226, 0, 1);
+      color: rgb(176, 148, 30);
+      padding: 0.5% 5%;
+      box-shadow: 0 2px 2px rgba(0,0,0,0.2), 0 -4px 5px -2px #8c8041 inset;
+      &:hover{
+        box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+      }
     }
   }
 }
+
+@media (max-width: 1000px){
+  .registrations-edit-wrapper{
+    width: 90%;
+    .registrations-edit-form{
+      width: 90%;
+      i, em{
+        font-size: 0.8rem;
+      }
+    }
+  }
+  
+  .registrations-edit-submit .registrations-btn{
+    padding: 0.5% 10%;
+  }
+  
+  .destroy-user-wrapper{
+    width: 60%;
+    margin-top: 5%;
+    p{
+      font-size: 0.8rem;
+    }
+    h3{
+      font-size: 1.4rem;
+    }
+    .destroy-submit{
+      text-align: right;
+      .destroy-btn{
+        font-size: 0.8rem;
+        border: none;
+        background-color: rgba(255, 226, 0, 1);
+        color: rgb(176, 148, 30);
+        padding: 0.5% 5%;
+        box-shadow: 0 2px 2px rgba(0,0,0,0.2), 0 -4px 5px -2px #8c8041 inset;
+        &:hover{
+          box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+        }
+      }
+    }
+  }
 }
