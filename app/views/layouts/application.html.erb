@@ -8,10 +8,9 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
     <script src="https://kit.fontawesome.com/7d5912329b.js" crossorigin="anonymous"></script>
     
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">-->
   </head>
 
   <body>
@@ -20,5 +19,7 @@
     <p class="alert"><%= alert %></p>
     <%= yield %>
     <%= render "devise/shared/footer" %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%# <%= javascript_include_tag 'application', 'data-turbolinks-eval' => false, javascript_pack_tag 'application' %> %>
   </body>
 </html>

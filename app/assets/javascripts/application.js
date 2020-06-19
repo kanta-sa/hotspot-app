@@ -14,6 +14,6 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require jquery_ujs 
 //= require_tree .
 //= require jquery.jscroll.min.js
+
