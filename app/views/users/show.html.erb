@@ -11,6 +11,9 @@
       <div class="user-name">
         <p><%= @user.username %></p>
       </div>
+      <% if current_user == @user %>
+        <p><a href="#">アイコンの変更</a></p>
+      <% end %>
     </div>
     <div class="user-detail-right">
       <ul>
@@ -18,17 +21,34 @@
         <li><span><%= @count_followers %></span>フォロワー</li>
         <li><%= render 'relationships/follow_button', user: @user %></li>
       </ul>
-      <div><i class="fas fa-image"></i> 投稿数<span><%= @count_posts %></span></div>
-      <div><i class="fas fa-heart"></i> いいねした数<span><%= @count_favorites %></span></div>
-      <div><%= link_to "編集ページ", edit_user_registration_path(current_user) %></div>
+      <div class="border"><i class="fas fa-image"></i> 投稿数<span><%= @count_posts %></span></div>
+      <div class="border"><i class="fas fa-heart"></i> いいねした数<span><%= @count_favorites %></span></div>
+      <% if current_user == @user %>
+        <div class="edit-button"><%= link_to "プロフィール編集", edit_user_registration_path(current_user), class: "nav-link" %></div>
+      <% end %>
     </div>
   </div>
 </div>
 
+<section id="work">
+  <ul class="tabs-nav">
+    <li><a href="#test-swipe-1">投稿一覧</a></li>
+    <li><a href="#test-swipe-2">いいね一覧</a></li>
+  </ul>
+  
+  <div id="test-swipe-1" class="tabs-panel">
+    <div class="row">
+      <%= render 'posts/posts', posts: @posts %>
+    </div>
+  </div>
+  <div id="test-swipe-2" class="tabs-panel">
+    <div class="row">
+      <%= render 'posts/posts', posts: @favo_posts %>
+    </div>
+  </div>
+</section>
 
-<% if @user.posts.any? %>
-  <%= render 'posts/posts', posts: @posts %>
-<% end %>
+
 
 
 
