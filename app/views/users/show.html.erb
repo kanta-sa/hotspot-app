@@ -16,11 +16,7 @@
       <% end %>
     </div>
     <div class="user-detail-right">
-      <ul>
-        <li><span><%= @count_followings %></span>フォロー</li>
-        <li><span><%= @count_followers %></span>フォロワー</li>
-        <li><%= render 'relationships/follow_button', user: @user %></li>
-      </ul>
+      <%= render 'relationships/follow_button', user: @user %>
       <div class="border"><i class="fas fa-image"></i> 投稿数<span><%= @count_posts %></span></div>
       <div class="border"><i class="fas fa-heart"></i> いいねした数<span><%= @count_favorites %></span></div>
       <% if current_user == @user %>

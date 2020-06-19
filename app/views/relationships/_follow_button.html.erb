@@ -1,13 +1,21 @@
-<% unless current_user == user %>
-  <% if current_user.following?(user) %>
-    <%= form_with(model: current_user.relationships.find_by(follow_id: user.id), local: true, method: :delete) do |f| %>
-      <%= hidden_field_tag :follow_id, user.id %>
-      <%= f.submit 'フォロー中', class: 'btn unfollow-btn' %>
-    <% end %>
-  <% else %>
-    <%= form_with(model: current_user.relationships.build, local: true) do |f| %>
-      <%= hidden_field_tag :follow_id, user.id %>
-      <%= f.submit 'フォローする', class: 'btn follow-btn' %>
-    <% end %>
-  <% end %>
-<% end %>
+<div id="follow_form">
+  <ul>
+    <li><span><%= user.followings.count %></span>フォロー</li>
+    <li><span><%= user.followers.count %></span>フォロワー</li>
+    <li>
+      <% unless current_user == user %>
+        <% if current_user.following?(user) %>
+          <%= form_for(current_user, url: relationship_path(user), method: :delete, remote: true) do |f| %>
+            <%= hidden_field_tag :follow_id, user.id %>
+            <%= f.submit 'フォロー中', remote: true, class: 'btn unfollow-btn' %>
+          <% end %>
+        <% else %>
+          <%= form_for(current_user, url: relationships_path, method: :post, remote: true) do |f| %>
+            <%= hidden_field_tag :follow_id, user.id %>
+            <%= f.submit 'フォローする', remote: true, class: 'btn follow-btn' %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </li>
+  </ul>
+</div>
