@@ -1,21 +1,25 @@
 <% if user_signed_in? %>
   <% if post.favorite_by?(current_user) %>
     <div class="unfavorite-btn-wrapper">
-      <%= link_to post_favorites_path(post_id: post.id), method: :delete do %>
-        <i class="fas fa-heart unfavorite-btn"><%= post.favorites.count %></i>
+      <%= link_to post_favorites_path(post_id: post.id), class: "nav-link", method: :delete, remote: true do %>
+        <i class="fas fa-heart unfavorite-btn"></i><span class="favo_count"><%= post.favorites.count %></span>
       <% end %>
     </div>
   <% else %>
     <div class="favorite-btn-wrapper">
-      <%= link_to post_favorites_path(post_id: post.id), method: :post do %>
-        <i class="far fa-heart like-btn" ><span><%= post.favorites.count %></span></i>
+      <%= link_to post_favorites_path(post_id: post.id), class: "nav-link", method: :post, remote: true do %>
+        <i class="far fa-heart favorite-btn" ></i><span class="unfavo_count"><%= post.favorites.count %></span>
       <% end %>
     </div>
   <% end %>
 <% else %>
-  <div class="favorite-btn-wrapper">
-    <%= link_to post_favorites_path(post_id: post.id), method: :post do %>
-      <i class="far fa-heart like-btn" ><span><%= post.favorites.count %></span></i>
-    <% end %>
-  </div>
+  <% if post.favorites.count > 0 %>
+    <div class="unfavorite-btn-wrapper">
+      <i class="fas fa-heart unfavorite-btn"></i><span class="favo_count"><%= post.favorites.count %></span>
+    </div>
+  <% else %>
+    <div class="favorite-btn-wrapper">
+      <i class="far fa-heart favorite-btn" ></i><span class="unfavo_count"><%= post.favorites.count %></span>
+    </div>
+  <% end %>
 <% end %>
