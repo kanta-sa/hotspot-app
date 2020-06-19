@@ -8,7 +8,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="https://kit.fontawesome.com/7d5912329b.js" crossorigin="anonymous"></script>
     
   </head>
@@ -17,8 +17,15 @@
     
     <%= render "devise/shared/header" %>
     <main>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <% unless flash.empty? %>
+        <script type="text/javascript">
+          <% flash.each do |name, msg| %>
+            <% name = "success" if name == "notice" %>
+            <% name = "error" if name == "alert" %>
+            toastr['<%= name %>']('<%= msg %>');
+          <% end %>
+        </script>
+      <% end %>
       <%= yield %>
     </main>
     <%= render "devise/shared/footer" %>
