@@ -19,7 +19,7 @@
     <p class="alert"><%= alert %></p>
     <%= yield %>
     <%= render "devise/shared/footer" %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%# <%= javascript_include_tag 'application', 'data-turbolinks-eval' => false, javascript_pack_tag 'application' %> %>
+    <%#<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-eval' => false %>
   </body>
 </html>
