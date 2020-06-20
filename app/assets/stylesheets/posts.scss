@@ -65,6 +65,9 @@
           display: flex;
           li{
             margin-right: 3%;
+            .fa-commenting, .fa-trash{
+              font-size: 1.4rem;
+            }
           }
         }
       }

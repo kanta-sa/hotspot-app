@@ -1,3 +1,115 @@
-// Place all the styles related to the comments controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.post-detail-container{
+  width: 60%;
+  margin: 3% auto;
+  border: 1px solid black;
+  .post-wrapper{
+    display: flex;
+    justify-content: space-between;
+    .left{
+      width: 50%;
+      margin: 1%;
+      .user-info{
+        display: flex;
+        align-items: center;
+        height: 70px;
+        .user-icon{
+          height: 90%;
+          width: (100*0.9)px;
+          .user-image{
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 50%;
+          }
+        }
+        .user-name{
+          margin-left: 2%;
+        }
+      }
+      .post-image-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        border: 1px solid silver;
+        .post-image{
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+    }
+    .right{
+      width: 45%;
+      ul{
+        margin-top: 80px;
+        list-style: none;
+        width: 80%;
+        li{
+          border-bottom: 1px solid black;
+          margin: 7% 1%;
+          .fa-location-arrow, .fa-clock{
+            margin-right: 3%;
+          }
+        }
+      }
+      .content{
+        display: flex;
+        align-items: center;
+        .content-left{
+          margin-right: 3%;
+        }
+        .fa-commenting{
+          font-size: 1.4rem;
+        }
+      }
+    }
+    .comment-form{
+      margin-top: 2%;
+      label{
+        font-size: 0.8rem;
+        color: #888888;
+      }
+      .text_field{
+        width: 80%;
+        height: 30px;
+        border: none;
+        border-bottom: 1px solid black;
+      }
+      .comment-btn{
+        display: none;
+      }
+    }
+  }
+}
+
+.comment-container{
+  width: 100%;
+  .comment-wrapper{
+    display: flex;
+    justify-content: space-between;
+    margin: 1% 2%;
+    height: 150px;
+    width: 90%;
+    .left{
+      width: 10%;
+      text-align: center;
+      .user-icon{
+        width: auto;
+        height: 60%;
+        .user-image{
+          max-width: 100%;
+          max-height: 100%;
+          border-radius: 50%;
+        }
+      }
+    }
+    .right{
+      width: 80%;
+      height: 100%;
+      .time{
+        text-align: right;
+        bottom: 0;
+        right: 0;
+      }
+    }
+  }
+}

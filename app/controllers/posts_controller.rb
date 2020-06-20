@@ -3,6 +3,12 @@ class PostsController < ApplicationController
   def index
     @posts = Post.page(params[:page]).per(9)
   end
+  
+  def show
+    @post = Post.find(params[:id])
+    @comments = @post.comments
+    @comment = @post.comments.build
+  end
 
   def new
     if user_signed_in?

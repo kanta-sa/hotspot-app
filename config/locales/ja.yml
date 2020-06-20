@@ -10,3 +10,5 @@ ja:
         name: "名称"
         information: "キャプション"
         image: "写真"
+      comment: 
+        content: "コメント"
