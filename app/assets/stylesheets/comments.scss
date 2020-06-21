@@ -5,6 +5,7 @@
   .post-wrapper{
     display: flex;
     justify-content: space-between;
+    margin-bottom: 2%;
     .left{
       width: 50%;
       margin: 1%;
@@ -30,6 +31,7 @@
         align-items: center;
         justify-content: center;
         width: 80%;
+        max-height: 400px;
         border: 1px solid silver;
         .post-image{
           max-width: 100%;

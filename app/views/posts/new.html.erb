@@ -27,8 +27,14 @@
     
     <div class="bottom">
       <div class="form-post-select">
-        <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "都道府県を選択してください"}, {class: "post-new-select"} %>
+        <%= f.label :prefecture_id, "都道府県" %>
+        <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "都道府県を選択してください", selected: @post.prefecture_id}, {class: "post-new-select　form-control"} %>
       </div>
+      <div class="form-post-select">
+        <div id="cities_select">
+          <%= render 'cities', prefecture_id: @post.prefecture_id %>
+        </div>
+      </div>  
     </div>
     <div class="post-new-submit">
       <%= f.submit "投稿", class: "post-btn" %>

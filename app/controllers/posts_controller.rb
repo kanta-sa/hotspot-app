@@ -12,8 +12,12 @@ class PostsController < ApplicationController
 
   def new
     if user_signed_in?
-      @post = current_user.posts.build
+      @post = Post.new(flash[:post])
     end
+  end
+  
+  def cities_select
+    render partial: 'cities', locals: { prefecture_id: params[:prefecture_id] } if request.xhr?
   end
 
   def create
@@ -37,6 +41,6 @@ class PostsController < ApplicationController
   private
   
   def post_params
-    params.require(:post).permit(:name, :information, :image, :prefecture_id)
+    params.require(:post).permit(:name, :information, :image, :prefecture_id, :city_id)
   end
 end

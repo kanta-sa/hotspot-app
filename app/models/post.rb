@@ -6,12 +6,11 @@ class Post < ApplicationRecord
   mount_uploader :image, ImageUploader
   validates :image, presence: true
   
-  #都道府県用
-  extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to_active_hash :prefecture
-  
   has_many :favorites, dependent: :destroy
   has_many :comments, dependent: :destroy
+  
+  belongs_to :prefecture
+  belongs_to :city
   
   def favorite_by?(user)
     favorites.where(user_id: user.id).exists?

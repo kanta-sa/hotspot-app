@@ -18,7 +18,7 @@
         <div class="right">
           <p class="title"><%= post.name %></p>
           <p><%= post.information %></p>
-          <p><%= post.prefecture.name %></p>
+          <p><%= post.prefecture.name %><%= post.city.name %></p>
           <%= link_to "詳細", post_path(post), class: "nav-link" %>
           <p><%= post.created_at.to_s(:datetime_jp) %></p>
           <ul>

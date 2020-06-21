@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   
   resources :posts, shallow: true do
+    collection do
+      get :cities_select
+    end
     resource :favorites, only: [:create, :destroy]
     get :favorites, on: :collection
     resources :comments, only: [:create, :destroy]
