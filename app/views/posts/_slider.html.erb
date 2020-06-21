@@ -1,5 +1,6 @@
 <div class="slideshow">
   <% posts.each do |post| %>
     <%= image_tag post.image.to_s, class: "slider-image" %>
+    <%= link_to "詳細", post_path(post), class: "slider-text" %>
   <% end %>
 </div>
