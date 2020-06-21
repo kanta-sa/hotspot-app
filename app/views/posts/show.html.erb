@@ -21,7 +21,13 @@
     <div class="right">
       <ul>
         <li><%= @post.name %></li>
-        <li><%= @post.information %></li>
+        <li>
+          <% if @post.information? %>
+            <%= @post.information %>
+          <% else %>
+            <p>(キャプション)</p>
+          <% end %>
+        </li>
         <li><i class="fas fa-location-arrow"></i><%= @post.prefecture.name %><%= @post.city.name %></li>
         <li><i class="far fa-clock"></i><%= @post.created_at.to_s(:datetime_jp) %></li>
       </ul>
@@ -44,6 +50,9 @@
     </div>
   </div>
   <div class="comment-container">
+    <% if @comments.any? %>
+      <p class=title>コメント欄</p>
+    <% end %>
     <% @comments.each do |comment| %>
       <% unless comment.id.nil? %>
         <div class="comment-wrapper">
@@ -61,7 +70,14 @@
           </div>
           <div class="right">
             <p class="content"><%= comment.content %></p>
-            <div class="time"><%= comment.created_at.to_s(:datetime_jp) %></div>
+            <div class="time">
+              <%= comment.created_at.to_s(:datetime_jp) %>
+              <% if comment.user == current_user %>
+                <%= link_to comment_path(comment), method: :delete, data: { confirm: 'You sure?' } do %>
+                  <i class="fas fa-trash"></i>
+                <% end %>
+              <% end %>
+            </div>
           </div>
         </div>
       <% end %>

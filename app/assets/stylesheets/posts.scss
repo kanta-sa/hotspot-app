@@ -56,6 +56,11 @@
       .right{
         width: 80%;
         margin-top: 1.5%;
+        p.overflow{
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
         .title{
           font-size: 1.1rem;
           margin-bottom: 2%;

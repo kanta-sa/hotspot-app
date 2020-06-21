@@ -1,5 +1,5 @@
 .post-detail-container{
-  width: 60%;
+  width: 70%;
   margin: 3% auto;
   border: 1px solid black;
   .post-wrapper{
@@ -33,6 +33,7 @@
         width: 80%;
         max-height: 400px;
         border: 1px solid silver;
+        margin-top: 2%;
         .post-image{
           max-width: 100%;
           max-height: 100%;
@@ -46,8 +47,9 @@
         list-style: none;
         width: 80%;
         li{
-          border-bottom: 1px solid black;
+          border-bottom: 1px solid #dddddd;
           margin: 7% 1%;
+          word-wrap: break-word;
           .fa-location-arrow, .fa-clock{
             margin-right: 3%;
           }
@@ -84,6 +86,10 @@
 }
 
 .comment-container{
+  p.title{
+    color: rgba(136, 136, 136, 0.7);
+    margin: 2%;
+  }
   width: 100%;
   .comment-wrapper{
     display: flex;
@@ -107,11 +113,52 @@
     .right{
       width: 80%;
       height: 100%;
+      position: relative;
+      p.content{
+        margin-top: 1%;
+        word-wrap: break-word;
+      }
       .time{
-        text-align: right;
-        bottom: 0;
-        right: 0;
+        position: absolute;
+        bottom: 3%;
+        right: 1%;
       }
     }
   }
+}
+
+@media (max-width: 1200px){
+  .post-detail-container{
+    width: 90%;
+  }
+}
+
+@media (max-width: 800px){
+  .post-detail-container{
+    width: 90%;
+    .post-wrapper{
+      display: block;
+      .left{
+        width: 90%;
+        margin: 1% auto;
+        .post-image-wrapper{
+          width: 100%;
+          max-height: 600px;
+          margin-top: 2%;
+        }
+      }
+      .right{
+        width: 90%;
+        margin: 1% auto;
+        ul{
+          width: 100%;
+          li{
+            margin: 4% 1%;
+            word-wrap: break-word;
+          }
+        }
+      }
+    }
+  }
+  
 }
