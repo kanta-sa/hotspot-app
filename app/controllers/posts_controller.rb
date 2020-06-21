@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
   
   def index
-    @posts = Post.page(params[:page]).per(9)
+    @search_params = post_search_params
+    @posts = Post.search(@search_params).includes(:prefecture).page(params[:page]).per(9)
+    @random = Post.order("RAND()").limit(4)
   end
   
   def show
@@ -43,4 +45,9 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:name, :information, :image, :prefecture_id, :city_id)
   end
+  
+  def post_search_params
+    params.fetch(:search, {}).permit(:prefecture_id)
+  end
+  
 end

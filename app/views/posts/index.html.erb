@@ -1,2 +1,11 @@
+<%= render "slider", posts: @random %> 
 <h1>投稿一覧</h1>
+<div class="search-form">
+  <%= form_with(scope: :search, url: posts_path, method: :get, local: true) do |f| %>
+  
+    <%= f.label :prefecture_id, '都道府県' %>
+    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, selected: @search_params[:prefecture_id], include_blank: '選択') %>
+    <%= f.submit "検索する", class: "" %>
+  <% end %>
+</div>
 <%= render 'posts', posts: @posts %>
