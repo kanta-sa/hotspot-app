@@ -15,6 +15,7 @@
 //= require toastr
 //= require activestorage
 //= require turbolinks
+//= require infinite-scroll.pkgd.min.js
 //= require_tree .
-//= require jquery.jscroll.min.js
+
 

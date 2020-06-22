@@ -8,6 +8,7 @@
     width: 32%;
     height: 500px;
     margin: 1% 0.5%;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.2), 0 -4px 5px -2px #8c8041 inset;
     .picture{
       height: 60%;
       justify-content: center;
@@ -107,3 +108,20 @@
   }
 }
 
+
+//infinitescroll
+.loadmore-btn-wrapper{
+  width: 100%;
+  text-align: center;
+  button{
+    border: none;
+    border-radius: 2%;
+    background-color: #afa07f;
+    color: #ffffff;
+    padding: 0.5% 5%;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.2), 0 -4px 5px -2px #8c8041 inset;
+    &:hover{
+      box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+    }
+  }
+}
