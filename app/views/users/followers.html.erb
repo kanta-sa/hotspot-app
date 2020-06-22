@@ -1,9 +1,0 @@
-<h3><%= @user.username %>さんをフォローしているユーザー</h3>
-
-<% if @followers.any? %>
-  <% @followers.each do |follower| %>
-    <%= render 'profile', user: follower %>
-  <% end %> 
-<% else %> 
-  <p>まだいません</p>
-<% end %>

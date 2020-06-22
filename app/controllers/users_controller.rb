@@ -7,11 +7,8 @@ class UsersController < ApplicationController
     @favo_posts = @user.favorite_of_posts.page(params[:page]).per(15)
   end
   
-  def followings
+  def follow
     @followings = @user.followings.page(params[:page])
-  end
-  
-  def followers
     @followers = @user.followers.page(params[:page])
   end
   

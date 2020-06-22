@@ -1,0 +1,47 @@
+<section id="follow">
+  <ul class="tabs-nav">
+    <li>
+      <a href="#follow-swipe-1" class="active">
+        <div class="user-status">
+          <div class="status-value" id="followings_<%= @user.id %>">
+            <%= @user.followings.count.to_s(:delimited) %>
+          </div>
+          <span class="status-name">フォロー</span>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="#follow-swipe-2">
+        <div class="user-status">
+          <div class="status-value" id="followers_<%= @user.id %>">
+            <%= @user.followers.count.to_s(:delimited) %>
+          </div>
+          <span class="status-name">フォロワー</span>
+        </div>
+      </a>
+    </li>
+  </ul>
+  
+  <div id="follow-swipe-1" class="tabs-panel">
+    <div class="row">
+      <% if @followings.any? %>
+        <% @followings.each do |following| %>
+          <%= render 'profile', user: following %>
+        <% end %> 
+      <% else %>
+        <p style="margin-top: 100px; text-align: center;">誰もフォローしていません</p>
+      <% end %> 
+    </div>
+  </div>
+  <div id="follow-swipe-2" class="tabs-panel">
+    <div class="row">
+      <% if @followers.any? %>
+        <% @followers.each do |follower| %>
+          <%= render 'profile', user: follower %>
+        <% end %> 
+      <% else %>
+        <p style="margin-top: 100px; text-align: center;">フォローされていません</p>
+      <% end %> 
+    </div>
+  </div>
+</section>

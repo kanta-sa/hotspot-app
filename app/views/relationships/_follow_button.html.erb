@@ -1,12 +1,12 @@
 <div class="follow_btn_<%= user.id %>">
   <ul>
     <li>
-      <%= link_to followings_user_path(user), class: "nav-link" do %>
+      <%= link_to follow_user_path(user), class: "nav-link following-btn" do %>
         <span class=""><%= user.followings.count %>フォロー</span>
       <% end %>
     </li>
     <li>
-      <%= link_to followers_user_path(user), class: "nav-link" do %>
+      <%= link_to follow_user_path(user), class: "nav-link follower-btn" do %>
         <span class=""><%= user.followers.count %>フォロワー</span>
       <% end %>
     </li>
