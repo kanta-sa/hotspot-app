@@ -1,0 +1,27 @@
+<div class="user-detail-wrapper">
+  <div class="user-detail">
+    <div class="user-detail-left">
+      <div class="user-image">
+        <% if user.image? %>
+          <%= image_tag user.image.to_s, size: '130x130', class: 'user-image-circle' %>
+        <% else %>
+          <%= image_tag '/images/user.png', size: '130x130', class: 'user-image-circle' %>
+        <% end %>
+      </div>
+      <div class="user-name">
+        <p><%= user.username %></p>
+      </div>
+      <% if current_user == user %>
+        <p><a href="#">アイコンの変更</a></p>
+      <% end %>
+    </div>
+    <div class="user-detail-right">
+      <%= render 'relationships/follow_button', user: user %>
+      <div class="border"><i class="fas fa-image"></i> 投稿数 <span><%= user.posts.count %></span></div>
+      <div class="border"><i class="fas fa-heart"></i> いいねした数 <span><%= user.favorites.count %></span></div>
+      <% if current_user == user %>
+        <div class="edit-button"><%= link_to "プロフィール編集", edit_user_registration_path(current_user), class: "nav-link" %></div>
+      <% end %>
+    </div>
+  </div>
+</div>

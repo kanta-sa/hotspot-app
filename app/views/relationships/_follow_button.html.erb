@@ -1,7 +1,15 @@
-<div id="follow_form">
+<div class="follow_btn_<%= user.id %>">
   <ul>
-    <li><span><%= user.followings.count %></span>フォロー</li>
-    <li><span><%= user.followers.count %></span>フォロワー</li>
+    <li>
+      <%= link_to followings_user_path(user), class: "nav-link" do %>
+        <span class=""><%= user.followings.count %>フォロー</span>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to followers_user_path(user), class: "nav-link" do %>
+        <span class=""><%= user.followers.count %>フォロワー</span>
+      <% end %>
+    </li>
     <li>
       <% unless current_user == user %>
         <% if current_user.following?(user) %>
