@@ -65,4 +65,28 @@ $follow: rgb(0, 170, 255);
   }
 }
 
+@media (max-width: 1200px){
+  .user-detail-wrapper{
+    width: 90%;
+  }
+}
 
+@media (max-width: 900px){
+  .user-detail-wrapper{
+    width: 95%;
+    .user-detail{
+      &-left{
+        width: 30%;
+      }
+      &-right{
+        width: 65%;
+        ul{
+          width: 90%;
+        }
+        div.border{
+          width: 90%;
+        }
+      }
+    }
+  }
+}
