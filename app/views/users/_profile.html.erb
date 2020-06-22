@@ -3,13 +3,13 @@
     <div class="user-detail-left">
       <div class="user-image">
         <% if user.image? %>
-          <%= image_tag user.image.to_s, size: '130x130', class: 'user-image-circle' %>
+          <%= link_to image_tag(user.image.to_s, size: '130x130', class: "user-image-circle"), user_path(user) %>
         <% else %>
-          <%= image_tag '/images/user.png', size: '130x130', class: 'user-image-circle' %>
+          <%= link_to image_tag('/images/user.png', size: '130x130', class: "user-image-circle"), user_path(user) %>
         <% end %>
       </div>
       <div class="user-name">
-        <p><%= user.username %></p>
+        <p><%= link_to user.username, user_path(user), class: "nav-link" %></p>
       </div>
       <% if current_user == user %>
         <p><a href="#">アイコンの変更</a></p>
