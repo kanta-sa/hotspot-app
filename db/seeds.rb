@@ -1,3 +1,4 @@
+=begin
 require 'csv'
 
 #使用するデータ(CSVファイルの列)を指定
@@ -13,3 +14,11 @@ CSV.foreach('db/csv/prefectures_cities.csv') do |row|
   Prefecture.find_or_create_by(name: prefecture_name)
   City.find_or_create_by(name: city_name, prefecture_id: prefecture_id)
 end
+=end
+
+User.create!(username: 'ゲストユーザー',
+             email: 'guest@example.com',
+             password: '12345678',
+             password_confirmation: '12345678',
+             image: open("./db/fixtures/guest_user.jpg"),
+             guest: true)
