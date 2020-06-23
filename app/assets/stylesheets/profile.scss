@@ -61,6 +61,11 @@ $follow: rgb(0, 170, 255);
           color: $follow;
         }
       }
+      p.note{
+        color: red;
+        font-size: 0.8rem;
+        word-wrap: break-word;
+      }
     }
   }
 }

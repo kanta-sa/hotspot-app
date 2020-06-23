@@ -1,7 +1,6 @@
 <h1 class="session-new-head">ログイン</h1>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="session-new-wrapper">
+<div class="session-new-wrapper">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="session-new-form">
       <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "new-form" %>
@@ -10,17 +9,19 @@
       <%= f.label :password %><br />
       <%= f.password_field :password, autocomplete: "current-password", class: "new-form" %>
     </div>
-    
+      
     <div class="session-new-submit">
       <%= f.submit "ログインする", class: "session-btn" %>
     </div>
-  </div>
-<% end %>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |g| %>
-  <%= g.hidden_field :email, value: 'guest@example.com' %>
-  <%= g.hidden_field :password, value: '12345678' %>
-  <%= g.submit "かんたんログイン", class: 'btn btn-warning mb-3 user_form_btn' %>
-<% end %>
-
+    
+  <% end %>
+  
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |g| %>
+    <%= g.hidden_field :email, value: 'guest@example.com' %>
+    <%= g.hidden_field :password, value: '12345678' %>
+    <div class="guest-login">
+      <%= g.submit "かんたんログイン", class: 'guest-login-btn' %>
+    </div>
+  <% end %>
+</div>
 <%= render "devise/shared/links" %>

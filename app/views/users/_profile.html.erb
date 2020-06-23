@@ -11,7 +11,7 @@
       <div class="user-name">
         <p><%= link_to user.username, user_path(user), class: "nav-link" %></p>
       </div>
-      <% if current_user == user %>
+      <% if current_user == user && !user.guest %>
         <p><a href="#">アイコンの変更</a></p>
       <% end %>
     </div>
@@ -20,7 +20,11 @@
       <div class="border"><i class="fas fa-image"></i> 投稿数 <span><%= user.posts.count %></span></div>
       <div class="border"><i class="fas fa-heart"></i> いいねした数 <span><%= user.favorites.count %></span></div>
       <% if current_user == user %>
-        <div class="edit-button"><%= link_to "プロフィール編集", edit_user_registration_path(current_user), class: "nav-link" %></div>
+        <% if !user.guest %>
+          <div class="edit-button"><%= link_to "プロフィール編集", edit_user_registration_path(current_user), class: "nav-link" %></div>
+        <% else %>
+          <p class="note">ゲストユーザーはプロフィールを編集できません</p>
+        <% end %>
       <% end %>
     </div>
   </div>
