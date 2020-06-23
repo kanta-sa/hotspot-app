@@ -83,3 +83,5 @@ group :production do
 end
 
 gem 'toastr-rails'
+
+gem 'ransack'

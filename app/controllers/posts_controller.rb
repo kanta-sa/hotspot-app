@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
   
   def index
-    @search_params = post_search_params
-    @posts = Post.search(@search_params).includes(:prefecture).page(params[:page]).per(9)
+    @search = Post.ransack(params[:q])
+    @posts = @search.result.includes(:prefecture).page(params[:page]).per(9).order('updated_at DESC')
     @random = Post.order("RAND()").limit(4)
   end
   
