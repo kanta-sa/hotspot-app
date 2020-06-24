@@ -8,8 +8,12 @@
     <div class="post-new-top">
       <div class="left">
         <%= f.file_field :image, class: "image" %>
-        <div class="form-image", onClick="$('#post_image').click()">
-          <i class="fas fa-camera"><p class="help-block">※ 5MBまでの画像をアップロードできます</p></i>
+        <div class="form-image", id="img_field", onClick="$('#post_image').click()">
+          <% if @post.image.url.present? %>
+            <%= image_tag(@post.image.url) %>
+          <% else %>
+            <i class="fas fa-camera"><p class="help-block">※ 5MBまでの画像をアップロードできます</p></i>
+          <% end %>
         </div>
       </div>
       
@@ -41,4 +45,35 @@
     </div>
   </div>
 <% end %>
+
+<script type="text/javascript">
+  $('#post_image').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('ファイルサイズは5MB以下にしてください。');
+    }
+  });
+
+  // 画像プレビューを表示
+  $(function(){
+    $fileField = $('#post_image')
+    $($fileField).on('change', $fileField, function(e) {
+      file = e.target.files[0]
+      reader = new FileReader(),
+      $preview = $("#img_field");
+
+      reader.onload = (function(file) {
+        return function(e) {
+          $preview.empty();
+          $preview.append($('<img>').attr({
+            src: e.target.result,
+            class: "preview",
+            title: file.name
+          }));
+        };
+      })(file);
+      reader.readAsDataURL(file);
+    });
+  });
+</script>
 

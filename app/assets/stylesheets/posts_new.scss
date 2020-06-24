@@ -25,6 +25,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        .preview{
+          max-width: 100%;
+          max-height: 100%;
+        }
       }
       .fa-camera{
         font-size: 10.0rem;

@@ -4,9 +4,15 @@
   <%= render "devise/shared/error_messages", resource: resource %>
   <div class="registrations-new-wrapper">
     <div class="left">
-      <%= f.file_field :image, class: "image" %>
-      <div class="form-image", onClick="$('#user_image').click()">
-        <i class="fa fa-user" aria-hidden="true"><p class="help-block">アイコンを登録してください</p></i>
+      <div class="icon-field">
+        <%= f.file_field :image, class: "image" %>
+        <div class="form-image", id="avator_field", onClick="$('#user_image').click()">
+          <% if @user.image.url.present? %>
+            <%= image_tag(@user.image.url) %>
+          <% else %>
+            <i class="fa fa-user" aria-hidden="true"><p class="help-block">アイコンを登録してください</p></i>
+          <% end %>
+        </div>
       </div>
     </div>
     
@@ -40,3 +46,33 @@
 
 <%= render "devise/shared/links" %>
 
+<script type="text/javascript">
+  $('#user_image').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('ファイルサイズは5MB以下にしてください。');
+    }
+  });
+
+  // 画像プレビューを表示
+  $(function(){
+    $fileField = $('#user_image')
+    $($fileField).on('change', $fileField, function(e) {
+      file = e.target.files[0]
+      reader = new FileReader(),
+      $preview = $("#avator_field");
+
+      reader.onload = (function(file) {
+        return function(e) {
+          $preview.empty();
+          $preview.append($('<img>').attr({
+            src: e.target.result,
+            class: "preview",
+            title: file.name
+          }));
+        };
+      })(file);
+      reader.readAsDataURL(file);
+    });
+  });
+</script>
