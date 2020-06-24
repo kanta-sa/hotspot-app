@@ -2,7 +2,7 @@
 
 <%= form_with(model: @post, local: true) do |f| %>
   <% @post.errors.full_messages.each do |msg| %>
-    <li class="red-text"><%= msg %></li>
+    <li class=""><%= msg %></li>
   <% end %>
   <div class="post-new-wrapper">
     <div class="post-new-top">

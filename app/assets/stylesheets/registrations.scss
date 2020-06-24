@@ -11,15 +11,14 @@
   .left{
     width: 40%;
     justify-content: center;
-      align-items: center;
-      display: flex;
+    align-items: center;
+    display: flex;
     .icon-field{
       width: 300px;
       height: 300px;
       border-radius: 50%;
       border: 2px dashed black;
       cursor: pointer;
-      
       .image{
         display: none;
       }
@@ -204,6 +203,59 @@
           box-shadow: 0 1px 1px rgba(0,0,0,0.2);
         }
       }
+    }
+  }
+}
+
+/* user_edit → icon編集ページ*/
+.icon-edit-title{
+  text-align: center;
+  margin-top: 2%;
+}
+
+.icon-edit-wrapper{
+  margin: 3% 0;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  .icon-edit-form{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 2px solid black;
+    cursor: pointer;
+    .image{
+      display: none;
+    }
+    .edit-form-image{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .preview{
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+
+.icon-edit-submit{
+  text-align: center;
+  .icon-edit-btn{
+    font-size: 1.2rem;
+    border: none;
+    background-color: rgba(255, 226, 0, 1);
+    color: rgb(176, 148, 30);
+    padding: 0.5% 5%;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.2), 0 -4px 5px -2px #8c8041 inset;
+    &:hover{
+      box-shadow: 0 1px 1px rgba(0,0,0,0.2);
     }
   }
 }

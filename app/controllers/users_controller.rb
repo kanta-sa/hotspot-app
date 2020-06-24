@@ -12,9 +12,25 @@ class UsersController < ApplicationController
     @followers = @user.followers.page(params[:page])
   end
   
+  def edit
+  end
+  
+  def update
+    if @user.update(user_params)
+      redirect_to @user
+    else
+      flash.now[:alert] = '変更できませんでした'
+      render :edit
+    end
+  end
+  
   private
   
   def set_target_user
     @user = User.find(params[:id])
+  end
+  
+  def user_params
+    params.require(:user).permit(:image)
   end
 end

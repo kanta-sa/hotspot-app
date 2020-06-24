@@ -14,7 +14,7 @@ class PostsController < ApplicationController
 
   def new
     if user_signed_in?
-      @post = Post.new(flash[:post])
+      @post = Post.new
     end
   end
   
