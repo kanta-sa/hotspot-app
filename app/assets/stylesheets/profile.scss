@@ -13,7 +13,8 @@ $follow: rgb(0, 170, 255);
       text-align: center;
       padding: 1%;
       .user-image-circle{
-        border-radius: 50%; 
+        border-radius: 50%;
+        object-fit: cover;
       }
     }
     &-right{
