@@ -1,3 +1,6 @@
+<% breadcrumb :icon_edit, @user %>
+<%= render 'devise/shared/breadcrumbs', breadcrumbs: breadcrumbs %>
+
 <h2 class="icon-edit-title">アイコンを変更できます</h2>
 
 <%= form_with(model: @user, local: true) do |f| %>

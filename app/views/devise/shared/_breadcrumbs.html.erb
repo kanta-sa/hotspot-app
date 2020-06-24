@@ -1,0 +1,16 @@
+<% breadcrumbs.tap do |links| %>
+  <% if links.any? %>
+    <div class='container'>
+      <ul class='breadcrumb'>
+          <% links.each do |link| %>
+            <li>
+              <%= link_to_unless(link.current?, link.text, link.url, class: "nav-link") %>
+            </li>
+            <% if !link.current? %>
+              <p>></p>
+            <% end %>
+          <% end %>
+      </ul>
+    </div>
+  <% end %>
+<% end %>

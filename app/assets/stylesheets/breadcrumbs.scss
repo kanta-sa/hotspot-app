@@ -1,0 +1,11 @@
+ul.breadcrumb{
+  display: flex;
+  list-style: none;
+  li{
+    margin: 0 10px;
+    font-size: 0.9rem;
+  }
+  p{
+    font-size: 0.9rem;
+  }
+}

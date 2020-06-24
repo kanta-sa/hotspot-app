@@ -85,3 +85,5 @@ end
 gem 'toastr-rails'
 
 gem 'ransack'
+
+gem 'gretel'
