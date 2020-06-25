@@ -18,28 +18,26 @@
       </div>
       
       <div class="right">
-        <div class="form-post-name">
-          <%= f.label :name %></br>
-          <%= f.text_field :name, placeholder: "名称", class: "text_field" %>
+        <div class="post-form">
+          <%= f.text_field :name, placeholder: "名称", class: "text_field post_field" %>
+          <%= f.label :name %>
         </div>
-        <div class="form-post-info">
-          <%= f.label :information %></br>
-          <%= f.text_area :information, placeholder: "キャプション", class: "text_area" %>
+        <div class="post-form">
+          <%= f.text_area :information, placeholder: "キャプション", class: "text_area post_field" %>
+          <%= f.label :information %>
         </div>
+        <div class="post-form">
+          <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "都道府県を選択してください", selected: @post.prefecture_id}, {class: "select_box post_field"} %>
+          <%= f.label :prefecture_id, "都道府県" %>
+        </div>
+        <div class="post-form">
+          <div id="cities_select">
+            <%= render 'cities', prefecture_id: @post.prefecture_id %>
+          </div>
+        </div>  
       </div>
     </div>
     
-    <div class="bottom">
-      <div class="form-post-select">
-        <%= f.label :prefecture_id, "都道府県" %>
-        <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "都道府県を選択してください", selected: @post.prefecture_id}, {class: "post-new-select　form-control"} %>
-      </div>
-      <div class="form-post-select">
-        <div id="cities_select">
-          <%= render 'cities', prefecture_id: @post.prefecture_id %>
-        </div>
-      </div>  
-    </div>
     <div class="post-new-submit">
       <%= f.submit "投稿", class: "post-btn" %>
     </div>
@@ -77,3 +75,22 @@
   });
 </script>
 
+<script type="text/javascript">
+  $(function(){
+    $('text_area')
+    .on('change keyup keydown paste cut', function(){
+      if($(this).outerHeight() > this.scrollHeight){
+        $(this).height(1)
+      }
+      while($(this).outerHeight() < this.scrollHeight){
+        $(this).height($(this).height() + 1)
+      }
+    });
+  });
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.select_box').formSelect();
+  });
+</script>
