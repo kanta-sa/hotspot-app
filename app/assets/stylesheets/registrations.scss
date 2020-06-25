@@ -123,19 +123,37 @@
 .registrations-edit-wrapper{
   width: 50%;
   margin: 2% auto;
-  .registrations-edit-form{
-    width: 80%;
-    margin: 5% auto;
-    label{
-      font-size: 0.8rem;
-      color: rgba(136, 136, 136, 0.7);
+}
+.registrations-edit-form{
+  width: 80%;
+  position: relative;
+  margin: 0 auto 50px;
+  .edit-form{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 1% 0;
+    &:focus{
+      outline: none;
+      border-bottom: 2px solid orange;
+      & ~ label{
+        color: orange;
+      }
+      & ~ .space-between > i{
+        color: orange;
+      }
     }
-    .edit-form{
-      width: 100%;
-      height: 30px;
-      border: none;
-      border-bottom: 1px solid black;
-    }
+  }
+  .space-between{
+    display: flex;
+    justify-content: space-between;
+  }
+  label{
+    position: absolute;
+    top: -20px;
+    left: 0;
+    font-size: 0.8rem;
+    color: #888888;
   }
 }
 
@@ -180,6 +198,9 @@
 }
 
 @media (max-width: 1000px){
+  .registrations-edit-head{
+    margin-bottom: 7%;
+  }
   .registrations-edit-wrapper{
     width: 90%;
     .registrations-edit-form{

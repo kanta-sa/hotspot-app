@@ -6,13 +6,13 @@
   <%= render "devise/shared/error_messages", resource: resource %>
   <div class="registrations-edit-wrapper">
     <div class="registrations-edit-form">
-      <%= f.label :username %><br />
       <%= f.text_field :username, class: 'edit-form', autofocus: true %>
+      <%= f.label :username %>
     </div>
 
     <div class="registrations-edit-form">
-      <%= f.label :email %><br />
       <%= f.email_field :email, class: 'edit-form', autofocus: true, autocomplete: "email" %>
+      <%= f.label :email %>
     </div>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -20,22 +20,23 @@
     <% end %>
     
     <div class="registrations-edit-form">
-      <%= f.label :current_password %> <i>(パスワードを変更する場合は現在のパスワードを入力してください)</i><br />
       <%= f.password_field :current_password, class: 'edit-form', autocomplete: "current-password" %>
+      <%= f.label :current_password %>
     </div>
   
     <div class="registrations-edit-form">
-      <%= f.label :password %> <i>(パスワードを変更しない場合は空白にしてください)</i><br />
       <%= f.password_field :password, class: 'edit-form', autocomplete: "new-password" %>
+      <%= f.label :password %>
       <% if @minimum_password_length %>
-        <br />
-        <em>半角英数(<%= @minimum_password_length %>文字以上)</em>
+        <div class="space-between">
+          <em>半角英数(<%= @minimum_password_length %>文字以上)</em><i>※パスワードを変更しない場合は空白にしてください</i>
+        </div>
       <% end %>
     </div>
   
     <div class="registrations-edit-form">
-      <%= f.label :password_confirmation %><br />
       <%= f.password_field :password_confirmation, class: 'edit-form', autocomplete: "new-password" %>
+      <%= f.label :password_confirmation %>
     </div>
   
     <div class="registrations-edit-submit">
