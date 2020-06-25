@@ -18,24 +18,24 @@
     
     <div class="right">
       <div class="registrations-new-form">
-        <%= f.label :username %><br />
         <%= f.text_field :username, class: 'new-form', autofocus: true %>
+        <%= f.label :username %>
       </div>
       <div class="registrations-new-form">
-        <%= f.label :email %><br />
         <%= f.email_field :email, class: 'new-form', autofocus: true, autocomplete: "email" %>
+        <%= f.label :email %>
       </div>
       <div class="registrations-new-form">
+        <%= f.password_field :password, class: 'new-form', autocomplete: "new-password" %>
         <%= f.label :password %>
         <% if @minimum_password_length %>
         <em>半角英数(<%= @minimum_password_length %> 文字以上)</em>
-        <% end %><br />
-        <%= f.password_field :password, class: 'new-form', autocomplete: "new-password" %>
+        <% end %>
       </div>
     
       <div class="registrations-new-form">
-        <%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, class: 'new-form', autocomplete: "new-password" %>
+        <%= f.label :password_confirmation %>
       </div>
     </div>
   </div>

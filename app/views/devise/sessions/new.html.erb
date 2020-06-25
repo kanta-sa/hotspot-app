@@ -2,12 +2,12 @@
 <div class="session-new-wrapper">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="session-new-form">
-      <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "new-form" %>
+      <%= f.label :email %>
     </div>
     <div class="session-new-form">
-      <%= f.label :password %><br />
       <%= f.password_field :password, autocomplete: "current-password", class: "new-form" %>
+      <%= f.label :password %>
     </div>
       
     <div class="session-new-submit">

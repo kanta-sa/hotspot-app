@@ -1,25 +1,12 @@
 .session-new-head{
   text-align: center;
   margin-top: 1%;
+  margin-bottom: 2%;
 }
 
 .session-new-wrapper{
   width: 50%;
   margin: 2% auto;
-  .session-new-form{
-    width: 80%;
-    margin: 5% auto;
-    label{
-      font-size: 0.8rem;
-      color: rgba(136, 136, 136, 0.7);
-    }
-    .new-form{
-      width: 100%;
-      height: 30px;
-      border: none;
-      border-bottom: 1px solid black;
-    }
-  }
   .session-new-submit{
     text-align: center;
     .session-btn{
@@ -54,8 +41,37 @@
   }
 }
 
+.session-new-form{
+  position: relative;
+  width: 80%;
+  margin: 0 auto 70px;
+  .new-form{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 2% 0;
+    &:focus{
+      outline: none;
+      border-bottom: 2px solid orange;
+      & ~ label{
+        color: orange;
+      }
+    }
+  }
+  label{
+    position: absolute;
+    top: -15px;
+    left: 0;
+    font-size: 0.8rem;
+    color: #888888;
+  }
+}
+
 
 @media (max-width: 1000px){
+  .session-new-head{
+    margin-bottom: 10%;
+  }
   .session-new-wrapper{
     width: 90%;
     .session-new-form{
@@ -63,3 +79,4 @@
     }
   }
 }
+
