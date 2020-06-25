@@ -12,7 +12,7 @@
         <p><%= link_to user.username, user_path(user), class: "nav-link" %></p>
       </div>
       <% if current_user == user && !user.guest %>
-        <%= link_to "アイコンの変更", edit_user_path(user) %>
+        <%= link_to "アイコンの変更", edit_user_path(user), class: "nav-link icon-path" %>
       <% end %>
     </div>
     <div class="user-detail-right">

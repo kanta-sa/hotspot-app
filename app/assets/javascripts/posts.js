@@ -29,3 +29,16 @@ $(document).on("turbolinks:load", function() {
     $(".loadmore-btn").hide();
   }
 })
+
+/* text-areaを自動で伸縮させる */
+$(document).on("turbolinks:load", function(){
+  $('.text_area')
+  .on('change keyup keydown paste cut', function(){
+    if($(this).outerHeight() > this.scrollHeight){
+      $(this).height(1)
+    }
+    while($(this).outerHeight() < this.scrollHeight){
+      $(this).height($(this).height() + 1)
+    }
+  });
+});

@@ -16,6 +16,9 @@ $follow: rgb(0, 170, 255);
         border-radius: 50%;
         object-fit: cover;
       }
+      .icon-path{
+        color: $follow;
+      }
     }
     &-right{
       width: 50%;
