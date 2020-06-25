@@ -1,10 +1,15 @@
 <%= render "slider", posts: @random %> 
-<h1>投稿一覧</h1>
-<div class="search-form">
+
+<div class="search-form-wrapper">
   <%= search_form_for @search do |f| %>
-    <%= f.collection_select :prefecture_id_eq_any, Prefecture.all, :id, :name, include_blank: '都道府県を選択してください' %>
-    <%= f.select( :sorts, {'並び替え': 'updated_at desc','日付の新しい順': 'updated_at desc', '日付の古い順': 'updated_at asc' })%>
-    <%= f.submit "検索", class: ''%>
+    <div class="search-form">
+      <%= f.collection_select :prefecture_id_eq_any, Prefecture.all, :id, :name, {include_blank: '都道府県を選択してください'}, {class: "form-control prefecture-search"} %>
+    </div>  
+    <div class="search-form">
+      <%= f.select( :sorts, {'並び替え': 'updated_at desc','日付の新しい順': 'updated_at desc', '日付の古い順': 'updated_at asc' },{}, {class: "form-control order-search"})%>
+    </div>
+    <%= f.submit "検索", class: 'search-btn'%>
+    
   <% end %>
 </div>
 <%= render 'posts', posts: @posts %>

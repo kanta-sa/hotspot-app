@@ -5,9 +5,8 @@
   height: 500px;
   .slider-image{
     opacity: 0.8;
-    max-width: 100%;
     width: 100%;
-    max-height: 100%;
+    height: 100%;
     display: none;
     position: absolute;
     position: relative;
@@ -19,5 +18,11 @@
     font-size: 2.0rem;
     color: #888888;
     display: none;
+  }
+}
+
+@media (max-width: 1000px){
+  .slideshow{
+    height: 300px;
   }
 }
