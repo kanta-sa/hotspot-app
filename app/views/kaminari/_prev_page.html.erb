@@ -6,6 +6,16 @@
     per_page:      number of items to fetch per page
     remote:        data-remote
 -%>
-<li class="page-item">
-  <%= link_to_unless current_page.first?, t('views.pagination.previous'), url, rel: 'prev', remote: remote, class: 'page-link' %>
-</li>
+<% if current_page.first? %>
+  <li class="disabled">
+    <%= content_tag :a do %>
+      <i class="fas fa-angle-left"></i>
+    <% end %>
+  </li>
+<% else %>
+  <li class="waves-effect">
+    <%= link_to url, :rel => 'prev', :remote => remote do %>
+      <i class="fas fa-angle-left"></i>
+    <% end %>
+  </li>
+<% end %>

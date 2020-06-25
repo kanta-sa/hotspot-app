@@ -111,3 +111,28 @@
     }
   }
 }
+
+.pagination-wrapper{
+  width: 100%;
+  margin: 0 auto;
+  ul.pagination{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    .page-link{
+      text-decoration: none;
+      color: black;
+    }
+    li{
+      margin: 0 2%;
+      .page-link-active{
+        color: white!important;
+        padding: 20% 50%;
+        background-color: rgba(255, 226, 0, 1);
+      }
+      .fas{
+        color: black;
+      }
+    }
+  }
+}
