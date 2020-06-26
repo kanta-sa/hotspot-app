@@ -1,7 +1,7 @@
 <% breadcrumb :icon_edit, @user %>
 <%= render 'devise/shared/breadcrumbs', breadcrumbs: breadcrumbs %>
 
-<h2 class="icon-edit-title">アイコンを変更できます</h2>
+<h2 class="icon-edit-title">アイコンの変更</h2>
 
 <%= form_with(model: @user, local: true) do |f| %>
   <div class="icon-edit-wrapper">
@@ -16,8 +16,9 @@
       </div>
     </div>
   </div>
+  <%= f.hidden_field :username, value: @user.username %>
   <div class="icon-edit-submit">
-    <%= f.submit "変更する", class: "icon-edit-btn" %>
+    <%= f.submit "更新する", class: "icon-edit-btn" %>
   </div>
 <% end %>
 

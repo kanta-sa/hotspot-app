@@ -18,7 +18,7 @@ crumb :icon_edit do |user|
 end
 
 crumb :profile_edit do |user|
-  link "プロフィールの編集", edit_user_registration_path(user)
+  link "プロフィール編集", edit_user_registration_path(user)
   parent :user, user
 end
 
