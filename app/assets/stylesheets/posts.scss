@@ -58,22 +58,28 @@
       }
       
       .right{
-        width: auto;
+        width: 75%;
         margin-top: 1.5%;
-        p.overflow{
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
+        p{
+          font-size: 0.9rem;
+        }
+        p.right-text{
+          text-align: right;
+          color: #888888;
         }
         .title{
-          font-size: 1.1rem;
-          margin-bottom: 2%;
+          font-size: 1.2rem;
+          margin-bottom: 3%;
+        }
+        .show-link{
+          color: rgb(0, 170, 255);
         }
         ul{
           list-style: none;
           display: flex;
+          margin-top: 10%;
           li{
-            margin-right: 3%;
+            margin-right: 5%;
             .fa-commenting, .fa-trash{
               font-size: 1.4rem;
             }

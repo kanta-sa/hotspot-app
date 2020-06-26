@@ -2,7 +2,9 @@
   <% posts.each do |post| %>
     <div class="posts-show-wrapper">
       <div class="picture">
-        <%= image_tag post.image.to_s, class: "post-image" %>
+        <%= link_to post.image.to_s, 'data-lightbox': post.image, class: "post-image" do %>
+          <%= image_tag post.image.to_s, class: "post-image" %>
+        <%end %>
       </div>
       <div class="post-contents">
         <div class="left">
@@ -17,10 +19,9 @@
         </div>
         <div class="right">
           <p class="title"><%= post.name %></p>
-          <p class="overflow"><%= post.information %></p>
           <p><%= post.prefecture.name %><%= post.city.name %></p>
-          <%= link_to "詳細", post_path(post), class: "nav-link" %>
-          <p><%= post.created_at.to_s(:datetime_jp) %></p>
+          <%= link_to "詳細", post_path(post), class: "nav-link show-link" %>
+          <p class="right-text"><%= post.created_at.to_s(:datetime_jp) %></p>
           <ul>
             <li><i class="fa fa-commenting"></i><span class="comment_count"><%= post.comments.count %></span></li>
             <li>
