@@ -12,7 +12,7 @@
           <% if @post.image.url.present? %>
             <%= image_tag(@post.image.url) %>
           <% else %>
-            <i class="fas fa-camera"><p class="help-block">※ 5MBまでの画像をアップロードできます</p></i>
+            <i class="fas fa-camera"><p class="help-block">※ 5MBまでの画像をアップロードできます<i class="fas fa-asterisk"></i></p></i>
           <% end %>
         </div>
       </div>
@@ -20,15 +20,15 @@
       <div class="right">
         <div class="post-form">
           <%= f.text_field :name, placeholder: "名称", class: "text_field post_field" %>
-          <%= f.label :name %>
+          <span class="label"><%= f.label :name %><i class="fas fa-asterisk"></i></span>
         </div>
         <div class="post-form">
           <%= f.text_area :information, placeholder: "キャプション", class: "text_area post_field" %>
-          <%= f.label :information %>
+          <span class="label"><%= f.label :information %></span>
         </div>
         <div class="post-form">
           <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "都道府県を選択してください", selected: @post.prefecture_id}, {class: "select_box post_field"} %>
-          <%= f.label :prefecture_id, "都道府県" %>
+          <span class="label"><%= f.label :prefecture_id, "都道府県" %><i class="fas fa-asterisk"></i></span>
         </div>
         <div class="post-form">
           <div id="cities_select">

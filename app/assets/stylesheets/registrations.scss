@@ -60,9 +60,9 @@
     padding: 2% 0;
     &:focus{
       outline: none;
-      border-bottom: 2px solid orange;
+      border-bottom: 2px solid rgb(0, 170, 255);
       & ~ label{
-        color: orange;
+        color: rgb(0, 170, 255);
       }
     }
   }
@@ -135,12 +135,12 @@
     padding: 1% 0;
     &:focus{
       outline: none;
-      border-bottom: 2px solid orange;
+      border-bottom: 2px solid rgb(0, 170, 255);
       & ~ label{
-        color: orange;
+        color: rgb(0, 170, 255);
       }
       & ~ .space-between > i{
-        color: orange;
+        color: red;
       }
     }
   }

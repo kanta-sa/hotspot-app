@@ -83,13 +83,14 @@
     border-bottom: 1px solid black;
     &:focus{
       outline: none;
-      border-bottom: 2px solid orange;
-      & ~ label{
-        color: orange;
+      border-bottom: 2px solid rgb(0, 170, 255);
+      & ~ .label > label{
+        color: rgb(0, 170, 255);
       }
     }
   }
-  label{
+  
+  .label{
     position: absolute;
     top: -20px;
     left: 0;
@@ -102,6 +103,11 @@
       color: #3aacad;
     }
   }
+}
+
+.fa-asterisk{
+  font-size: 10px;
+  color: rgba(222, 52, 0, 0.4);
 }
 
 .text_area{
