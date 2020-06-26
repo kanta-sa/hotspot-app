@@ -1,3 +1,22 @@
-// Place all the styles related to the notifications controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.notification-container{
+  width: 50%;
+  margin: 1% auto;
+  .notification-head{
+    margin-bottom: 3%;
+  }
+  .notification-wrapper{
+    display: flex;
+    align-items: center;
+    .user-detail{
+      display: flex;
+      align-items: center;
+      .img{
+        border-radius: 50%;
+        margin: 2px;
+      }
+    }
+    .nav-link{
+      color: rgb(0, 170, 255);
+    }
+  }
+}

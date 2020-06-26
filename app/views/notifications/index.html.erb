@@ -1,17 +1,21 @@
-<h1>通知</h1>
+<div class="notification-container">
+  <h1 class="notification-head">通知</h1>
   <% @notifications.each do |notification| %>
-    <div class="">
-      <%= link_to user_path(notification.visitor) do %>
-        <%= notification.visitor.username %>
+    <div class="notification-wrapper">
+      <%= link_to user_path(notification.visitor), class: "nav-link" do %>
+        <div class="user-detail">
+          <%= image_tag notification.visitor.image.to_s, size: "30x30", class: "img" %>
+          <%= notification.visitor.username %>
+        </div>
       <% end %>
       <span>さんが</span>
       <% case notification.action %>
         <% when "follow" then %>
           <span>あなたをフォローしました。</span>
         <% when "favorite" then %>
-          <%= link_to "あなたの投稿", post_path(notification.post_id) %>にいいねしました。
+          <%= link_to "あなたの投稿", post_path(notification.post_id), class: "nav-link" %>にいいねしました。
         <% when "comment" then %>
-          <%= link_to "あなたの投稿", post_path(notification.post_id) %>にコメントしました。
+          <%= link_to "あなたの投稿", post_path(notification.post_id), class: "nav-link" %>にコメントしました。
         <% end %>
       <%= " (#{time_ago_in_words(notification.created_at)}前)" %>
     </div>
