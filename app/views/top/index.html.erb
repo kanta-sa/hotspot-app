@@ -1,9 +1,13 @@
-<div class="top">
-  <div class="contents center">
-    <div class="contents_title">
-      <h2>The HotSpot DB</h2>
-      <p>観光地を知ることができるサイトです。</p>
+<div class="top-container">
+  <div class="top-wrapper">
+    <div class="top-contents">
+      <h1>The HotSpot DB</h1>
+      <p>全国の観光地を共有できるサイトです</p>
     </div>
   </div>
-  
+  <% unless user_signed_in? %>
+    <div id="top-login-link">
+      <%= link_to "ログインページ", new_user_session_path, class: "nav-link" %>
+    </div>
+  <% end %>
 </div>
