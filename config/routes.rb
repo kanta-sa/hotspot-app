@@ -20,4 +20,6 @@ Rails.application.routes.draw do
     get :favorites, on: :collection
     resources :comments, only: [:create, :destroy]
   end
+  
+  resources :notifications, only: :index
 end

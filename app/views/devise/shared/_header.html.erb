@@ -8,7 +8,7 @@
         <li><%= link_to "新規投稿", new_post_path, class: "nav-link" %></li>
         <li><%= link_to "ログアウト", destroy_user_session_path, method: "delete", class: "nav-link" %></li>
         <li><%= link_to "詳細ページ", user_path(current_user), class: "nav-link" %></li>
-        <li><a href="/", class="nav-link">通知</a></li>
+        <li><%= link_to "通知", notifications_path, class: "nav-link" %></li>
       <% else %>
         <li><%= link_to "新規登録", new_user_registration_path, class: "nav-link" %></li>
         <li><%= link_to "ログイン", new_user_session_path, class: "nav-link" %></li>
@@ -25,7 +25,7 @@
       <li><%= link_to "新規投稿", new_post_path, class: "nav-link" %></li>
       <li><%= link_to "ログアウト", destroy_user_session_path, method: "delete", class: "nav-link" %></li>
       <li><%= link_to "詳細ページ", user_path(current_user), class: "nav-link" %></li>
-      <li><a href="/", class="nav-link">通知</a></li>
+      <li><%= link_to "通知", notifications_path, class: "nav-link" %></li>
     <% else %>
       <li><%= link_to "新規登録", new_user_registration_path, class: "nav-link" %></li>
       <li><%= link_to "ログイン", new_user_session_path, class: "nav-link" %></li>

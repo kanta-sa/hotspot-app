@@ -1,0 +1,20 @@
+<h1>通知</h1>
+  <% @notifications.each do |notification| %>
+    <div class="">
+      <%= link_to user_path(notification.visitor) do %>
+        <%= notification.visitor.username %>
+      <% end %>
+      <span>さんが</span>
+      <% case notification.action %>
+        <% when "follow" then %>
+          <span>あなたをフォローしました。</span>
+        <% when "favorite" then %>
+          <%= link_to "あなたの投稿", post_path(notification.post_id) %>にいいねしました。
+        <% when "comment" then %>
+          <%= link_to "あなたの投稿", post_path(notification.post_id) %>にコメントしました。
+        <% end %>
+      <%= " (#{time_ago_in_words(notification.created_at)}前)" %>
+    </div>
+  <% end %>
+  <%= paginate @notifications %>
+</div>

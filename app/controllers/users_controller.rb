@@ -8,8 +8,8 @@ class UsersController < ApplicationController
   end
   
   def follow
-    @followings = @user.followings.page(params[:page])
-    @followers = @user.followers.page(params[:page])
+    @followings = @user.followings
+    @followers = @user.followers
   end
   
   def edit
