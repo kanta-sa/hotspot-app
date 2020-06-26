@@ -10,5 +10,7 @@ ja:
         name: "名称"
         information: "キャプション"
         image: "写真"
+        prefecture: "都道府県"
+        city: "市区町村"
       comment: 
         content: "コメント"

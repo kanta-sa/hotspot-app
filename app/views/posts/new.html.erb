@@ -1,10 +1,10 @@
 <h1 class="post-new-head">新しい投稿</h1>
 
 <%= form_with(model: @post, local: true) do |f| %>
-  <% @post.errors.full_messages.each do |msg| %>
-    <li class=""><%= msg %></li>
-  <% end %>
   <div class="post-new-wrapper">
+  <% @post.errors.full_messages.each do |msg| %>
+    <li class="red-text"><%= msg %></li>
+  <% end %>
     <div class="post-new-top">
       <div class="left">
         <%= f.file_field :image, class: "image" %>
