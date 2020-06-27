@@ -6,8 +6,14 @@
     </div>
   </div>
   <% unless user_signed_in? %>
-    <div id="top-login-link">
-      <%= link_to "ログインページ", new_user_session_path, class: "nav-link" %>
+    <div id="top-login-link" ontouchstart="">
+      <%= link_to "LOGIN", new_user_session_path, class: "nav-link login-btn" %>
     </div>
   <% end %>
 </div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.login-btn').fadeIn(2000).css('display','inline');
+  });
+</script>
