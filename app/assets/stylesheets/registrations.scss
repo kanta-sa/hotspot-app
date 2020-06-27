@@ -91,6 +91,38 @@
   }
 }
 
+div.help-link-wrapper{
+  width: 60%;
+  margin: 2% auto;
+  text-align: right;
+  font-size: 1.1rem;
+  .help-link{
+    color: #62A1CB;
+	  display: inline-block;
+	  padding-right: 16px;
+	  position: relative;
+	  font-size: 1.5rem;
+	  &:before, &:after{
+	    content: "";
+	    display: block;
+	    transform: skewX(45deg);
+    	position: absolute;
+    	right: 0;
+    	bottom: 6px;
+	  }
+	  &:before{
+	    width: 12px;
+	    height: 3px;
+	    background: #62A1CB;
+	  }
+	  &:after{
+	    width: 4px;
+	    height: 8px;
+	    background: #62A1CB;
+	  }
+  }
+}
+
 @media (max-width: 1000px){
   .registrations-new-wrapper{
     width: 90%;
@@ -112,6 +144,11 @@
     .registrations-btn{
       padding: 0.5% 10%;
     }
+  }
+  
+  div.help-link-wrapper{
+    width: 90%;
+    margin: 5% auto;
   }
 }
 
