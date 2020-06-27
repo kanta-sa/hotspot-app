@@ -1,0 +1,17 @@
+#error_explanation{
+  width: 40%;
+  margin: 0 auto;
+  .red-text{
+    color: red;
+  }
+  ul{
+    list-style: none;
+  }
+}
+
+@media (max-width: 1000px){
+  #error_explanation{
+    width: 81%;
+    margin-bottom: 2%;
+  }
+}
