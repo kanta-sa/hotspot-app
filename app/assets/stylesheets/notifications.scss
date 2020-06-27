@@ -1,4 +1,6 @@
 .notification-container{
+  font-size: 1.2rem;
+  word-wrap: break-word;
   width: 50%;
   margin: 1% auto;
   .notification-head{
@@ -17,6 +19,27 @@
     }
     .nav-link{
       color: rgb(0, 170, 255);
+    }
+  }
+}
+
+@media (max-width: 1200px){
+  .notification-container{
+    width: 90%;
+  }
+}
+
+@media (max-width: 800px){
+  .notification-container{
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 600px){
+  .notification-container{
+    font-size: 0.7rem;
+    .notification-wrapper{
+      margin-bottom: 1%;
     }
   }
 }
