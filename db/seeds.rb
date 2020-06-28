@@ -5,7 +5,7 @@ CSVROW_PREFID = 1
 CSVROW_PREFNAME = 2
 CSVROW_CITYNAME = 3
 
-CSV.foreach('db/csv/prefectures_cities1.csv') do |row|
+CSV.foreach('db/csv/test.csv') do |row|
   prefecture_id = row[CSVROW_PREFID]
   prefecture_name = row[CSVROW_PREFNAME]
   city_name = row[CSVROW_CITYNAME]
