@@ -99,3 +99,24 @@ $follow: rgb(0, 170, 255);
     }
   }
 }
+
+@media (max-width: 600px){
+  .user-detail-wrapper{
+    font-size: 0.9rem;
+    width: 95%;
+    .user-detail{
+      &-left{
+        width: 30%;
+      }
+      &-right{
+        width: 55%;
+        ul{
+          width: 90%;
+        }
+        div.border{
+          width: 90%;
+        }
+      }
+    }
+  }
+}

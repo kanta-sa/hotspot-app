@@ -9,3 +9,15 @@ ul.breadcrumb{
     font-size: 0.9rem;
   }
 }
+
+@media (max-width: 900px){
+  ul.breadcrumb{
+    li{
+      margin: 0 10px;
+      font-size: 0.75rem;
+    }
+    p{
+      font-size: 0.75rem;
+    }
+  }
+}

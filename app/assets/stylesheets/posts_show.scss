@@ -110,10 +110,11 @@
 
 @media (max-width: 700px){
   .posts-show-container{
-    width: 95%;
+    width: 100%;
     .posts-show-wrapper{
-      width: 90%;
-      margin: 1% auto;
+      width: 95%;
+      margin: 3% auto;
+      height: 420px;
     }
   }
 }
