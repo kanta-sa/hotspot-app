@@ -162,6 +162,7 @@
 @media (max-width: 800px){
   .post-detail-container{
     width: 90%;
+    font-size: 0.9rem;
     .post-wrapper{
       display: block;
       .left{
@@ -183,6 +184,49 @@
             margin: 4% 1%;
             word-wrap: break-word;
           }
+        }
+      }
+    }
+  }
+  .comment-container{
+    font-size: 0.9rem;
+    p.title{
+      color: rgba(136, 136, 136, 0.7);
+      margin: 2%;
+    }
+    width: 100%;
+    .comment-wrapper{
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      margin: 1% 2%;
+      height: 150px;
+      width: 90%;
+      .left{
+        width: 25%;
+        text-align: center;
+        .user-icon{
+          width: auto;
+          height: 60%;
+          .user-image{
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 50%;
+          }
+        }
+      }
+      .right{
+        width: 65%;
+        height: 100%;
+        position: relative;
+        p.content{
+          margin-top: 1%;
+          word-wrap: break-word;
+        }
+        .time{
+          position: absolute;
+          bottom: 20%;
+          right: 1%;
         }
       }
     }
