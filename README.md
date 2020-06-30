@@ -41,4 +41,4 @@ https://hotspotdb.herokuapp.com/
     * 都道府県SelectBoxに対する市区町村SelectBoxをAjaxで動的に制御
 
 # ER図
-https://github.com/kanta-sa/hotspot-app/issues/1#issue-648141091
+![ERD](https://user-images.githubusercontent.com/61926786/86127668-40915980-bb1b-11ea-84df-8053a39aa15e.png)
