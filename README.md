@@ -23,7 +23,7 @@ https://hotspotdb.herokuapp.com/
 * 投稿機能
   * 投稿一覧、投稿詳細表示、新規投稿、投稿削除
   * 画像のアップロードはCarrierWaveを使用
-*　コメント関係
+* コメント関係
   * コメント表示、コメント投稿、コメント削除機能
 * ページネーション機能
   * (kaminari + Infinite Scroll)を使用
