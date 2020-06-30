@@ -40,3 +40,5 @@ https://hotspotdb.herokuapp.com/
   * SelecyBoxの中身を動的に変更する機能
     * 都道府県SelectBoxに対する市区町村SelectBoxをAjaxで動的に制御
 
+# ER図
+https://github.com/kanta-sa/hotspot-app/issues/1#issue-648141091
