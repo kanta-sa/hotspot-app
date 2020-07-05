@@ -33,7 +33,7 @@ https://hotspotdb.herokuapp.com/
 * フォロー機能
   * フォロー、フォロワー一覧表示機能
   * Ajaxを使用
-*検索機能
+* 検索機能
   * Ransackを使用
 * パンくず機能
 * その他
