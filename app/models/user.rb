@@ -1,14 +1,15 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  
+  # モジュール
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-  validates :username, presence: true, length: { maximum: 10 }
-  validates :email, presence: true
-  
   mount_uploader :image, ImageUploader
   
+  
+  # 関連
   has_many :posts, dependent: :destroy
   
   has_many :relationships, dependent: :destroy
@@ -16,6 +17,20 @@ class User < ApplicationRecord
   has_many :reverses_of_relationship, class_name: 'Relationship', foreign_key: 'follow_id', dependent: :destroy
   has_many :followers, through: :reverses_of_relationship, source: :user
   
+  has_many :favorites, dependent: :destroy
+  has_many :favorite_of_posts, through: :favorites, source: :post
+  has_many :comments, dependent: :destroy
+  
+  has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
+  has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
+  
+  
+  # バリデーション
+  validates :username, presence: true, length: { maximum: 10 }
+  validates :email, presence: true
+  
+  
+  # メソッド
   def follow(other_user)
     unless self == other_user
       self.relationships.find_or_create_by(follow_id: other_user.id)
@@ -30,15 +45,6 @@ class User < ApplicationRecord
   def following?(other_user)
     self.followings.include?(other_user)
   end
-  
-  #favorite機能の実装について
-  has_many :favorites, dependent: :destroy
-  has_many :favorite_of_posts, through: :favorites, source: :post
-  has_many :comments, dependent: :destroy
-  
-  #通知機能の実装
-  has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
-  has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
   
   def create_notification_follow!(current_user)
     temp = Notification.where(["visitor_id = ? and visited_id = ? and action = ? ",current_user.id, id, 'follow'])
