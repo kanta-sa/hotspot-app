@@ -49,5 +49,10 @@ RSpec.describe User, type: :model do
       user = create(:testuser, email: mixed_case_email)
       expect(user.email).to eq(mixed_case_email.downcase)
     end
+    
+    it 'パスワードが空の時はNG' do
+      @user.password = @user.password_confirmation = ""
+      expect(@user).not_to be_valid
+    end
   end
 end
