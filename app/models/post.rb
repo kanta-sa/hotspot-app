@@ -21,6 +21,9 @@ class Post < ApplicationRecord
                               length: {maximum: 20}
   validates :information,     length: {maximum: 255}
   validates :image,           presence: true
+  validates :user_id,         presence: true
+  validates :prefecture_id,   presence: true
+  validates :city_id,         presence: true
   
   
   # メソッド

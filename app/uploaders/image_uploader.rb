@@ -11,7 +11,11 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # 画像ごとに保存するディレクトリを変える
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    if Rails.env.test?
+      "uploads_#{Rails.env}/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    else
+      "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    end
   end
   
   # 許可する画像の拡張子
