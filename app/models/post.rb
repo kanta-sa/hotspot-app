@@ -17,10 +17,10 @@ class Post < ApplicationRecord
   
   
   # バリデーション
-  validates :name, presence: true, length: {maximum: 20}
-  validates :information, length: {maximum: 255}
-  
-  validates :image, presence: true
+  validates :name,            presence: true, 
+                              length: {maximum: 20}
+  validates :information,     length: {maximum: 255}
+  validates :image,           presence: true
   
   
   # メソッド
