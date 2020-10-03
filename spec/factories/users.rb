@@ -19,4 +19,12 @@ FactoryBot.define do
     password { 'password' }
     password_confirmation { 'password' }
   end
+  
+  factory :guest_user, class: User do
+    username { "ゲストユーザー" }
+    email { "guest@example.com" } 
+    password { 'password' }
+    password_confirmation { 'password' }
+    guest { true }
+  end
 end

@@ -62,12 +62,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
   
+  protected
+
+    def after_update_path_for(resource)
+      user_path(resource)
+    end
+  
   private 
   
-  def forbid_guest_user
-    return unless @user.email == 'guest@example.com'
-
-    flash[:notice] = 'ゲストユーザーのため変更できません'
-    redirect_to user_path(@user)
-  end
+    def forbid_guest_user
+      return unless @user.email == 'guest@example.com'
+  
+      flash[:notice] = 'ゲストユーザーのため変更できません'
+      redirect_to user_path(@user)
+    end
 end
