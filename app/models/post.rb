@@ -7,13 +7,22 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :favorites, dependent: :destroy
   
-  has_many :favorites, dependent: :destroy
   has_many :comments, dependent: :destroy
   
   belongs_to :prefecture
   belongs_to :city
   
   has_many :notifications, dependent: :destroy
+  
+  ransacker :favorites_count do
+    query = '(SELECT COUNT(favorites.post_id) FROM favorites WHERE favorites.post_id = posts.id GROUP BY favorites.post_id)'
+    Arel.sql(query)
+  end
+  
+  ransacker :comments_count do
+    query = '(SELECT COUNT(comments.post_id) FROM comments WHERE comments.post_id = posts.id GROUP BY comments.post_id)'
+    Arel.sql(query)
+  end
   
   
   # バリデーション
