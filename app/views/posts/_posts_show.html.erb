@@ -25,14 +25,15 @@
           <ul>
             <li><i class="fa fa-commenting"></i><span class="comment_count"><%= post.comments.count %></span></li>
             <li>
+              <div id="favorites_buttons_<%= post.id %>">
+                <%= render 'favorites/favorite_button', post: post %>
+              </div>
+            </li>
+            <li>
               <% if current_user == post.user %>
                 <%= link_to post_path(post), method: :delete, data: { confirm: 'You sure?' } do %>
                   <i class="fas fa-trash"></i>
                 <% end %>
-              <% else %>
-                <div id="favorites_buttons_<%= post.id %>">
-                  <%= render 'favorites/favorite_button', post: post %>
-                </div>
               <% end %>
             </li>
           </ul>
