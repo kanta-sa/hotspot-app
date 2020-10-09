@@ -16,6 +16,21 @@
     
   <% end %>
   
+  <div class="omniauth">
+    <div class="sns">
+      <%= image_tag "/images/facebook.png" %>
+      <%= link_to "FaceBookでログインする", user_facebook_omniauth_authorize_path %>
+    </div>
+    <div class="sns">
+      <%= image_tag "/images/google.png" %>
+      <%= link_to "Googleでログインする", user_google_oauth2_omniauth_authorize_path %>
+    </div>
+    <div class="sns">
+      <%= image_tag "/images/twitter.png" %>
+      <%= link_to "Twitterでログインする", user_twitter_omniauth_authorize_path %>
+    </div>
+  </div>
+  
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |g| %>
     <%= g.hidden_field :email, value: 'guest@example.com' %>
     <%= g.hidden_field :password, value: '12345678' %>
