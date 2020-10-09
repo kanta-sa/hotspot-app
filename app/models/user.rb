@@ -33,7 +33,7 @@ class User < ApplicationRecord
   
   # バリデーション
   validates :username,      presence: true, 
-                            length: { maximum: 10 }
+                            length: { maximum: 30 }
   validates :email,         presence: true, 
                             length: { maximum: 255 },
                             format: { with: VALID_EMAIL_REGEX },
