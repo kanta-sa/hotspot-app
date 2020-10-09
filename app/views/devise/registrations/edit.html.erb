@@ -19,7 +19,7 @@
       <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
     
-    <% if f.object.password_required? %>
+    <% if @user.provider.nil? %>
       <div class="registrations-edit-form">
         <%= f.password_field :current_password, class: 'edit-form', autocomplete: "current-password" %>
         <%= f.label :current_password %>
