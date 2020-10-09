@@ -39,6 +39,21 @@
         <%= f.password_field :password_confirmation, class: 'new-form', autocomplete: "new-password" %>
         <%= f.label :password_confirmation %>
       </div>
+      
+      <div class="omniauth">
+        <div class="sns">
+          <%= image_tag "/images/facebook.png" %>
+          <%= link_to "FaceBookで登録する", user_facebook_omniauth_authorize_path %>
+        </div>
+        <div class="sns">
+          <%= image_tag "/images/google.png" %>
+          <%= link_to "Googleで登録する", user_google_oauth2_omniauth_authorize_path %>
+        </div>
+        <div class="sns">
+          <%= image_tag "/images/twitter.png" %>
+          <%= link_to "Twitterで登録する", user_twitter_omniauth_authorize_path %>
+        </div>
+      </div>
     </div>
   </div>
   <div class="registrations-new-submit">
