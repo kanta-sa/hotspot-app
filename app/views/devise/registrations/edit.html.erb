@@ -19,25 +19,27 @@
       <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
     
-    <div class="registrations-edit-form">
-      <%= f.password_field :current_password, class: 'edit-form', autocomplete: "current-password" %>
-      <%= f.label :current_password %>
-    </div>
-  
-    <div class="registrations-edit-form">
-      <%= f.password_field :password, class: 'edit-form', autocomplete: "new-password" %>
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
-        <div class="space-between">
-          <em>半角英数(<%= @minimum_password_length %>文字以上)</em><i>※パスワードを変更しない場合は空白にしてください</i>
-        </div>
-      <% end %>
-    </div>
-  
-    <div class="registrations-edit-form">
-      <%= f.password_field :password_confirmation, class: 'edit-form', autocomplete: "new-password" %>
-      <%= f.label :password_confirmation %>
-    </div>
+    <% if f.object.password_required? %>
+      <div class="registrations-edit-form">
+        <%= f.password_field :current_password, class: 'edit-form', autocomplete: "current-password" %>
+        <%= f.label :current_password %>
+      </div>
+    
+      <div class="registrations-edit-form">
+        <%= f.password_field :password, class: 'edit-form', autocomplete: "new-password" %>
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+          <div class="space-between">
+            <em>半角英数(<%= @minimum_password_length %>文字以上)</em><i>※パスワードを変更しない場合は空白にしてください</i>
+          </div>
+        <% end %>
+      </div>
+    
+      <div class="registrations-edit-form">
+        <%= f.password_field :password_confirmation, class: 'edit-form', autocomplete: "new-password" %>
+        <%= f.label :password_confirmation %>
+      </div>
+    <% end %>
   
     <div class="registrations-edit-submit">
       <%= f.submit "プロフィールを変更する", class: "registrations-btn" %>
