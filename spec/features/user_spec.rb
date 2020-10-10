@@ -9,7 +9,7 @@ feature 'User', type: :feature do
       fill_in "メールアドレス", with: "test@example.com"
       fill_in "パスワード", with: "password"
       fill_in "パスワード確認", with: "password"
-      click_on "ユーザーを作成"
+      find(".registrations-btn").click
       expect(page).to have_content("プロフィール編集")
     end
     

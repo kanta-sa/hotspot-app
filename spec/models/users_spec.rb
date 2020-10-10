@@ -23,7 +23,7 @@ RSpec.describe User, type: :model do
     end
     
     it 'usernameは長すぎるとNG' do
-      @user.username = "a" * 11
+      @user.username = "a" * 31
       expect(@user).not_to be_valid
     end
     
