@@ -35,6 +35,9 @@ https://hotspotdb.herokuapp.com/
   * Ajaxを使用
 * 検索機能
   * Ransackを使用
+* Rspecによる自動テスト機能
+* 通知機能
+* SNS機能・ログイン機能(Google/Facebook/Twitter)
 * パンくず機能
 * その他
   * SelecyBoxの中身を動的に変更する機能
