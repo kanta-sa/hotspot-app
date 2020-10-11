@@ -14,6 +14,8 @@ class Post < ApplicationRecord
   
   has_many :notifications, dependent: :destroy
   
+  has_many :reviews, dependent: :destroy
+  
   ransacker :favorites_count do
     query = '(SELECT COUNT(favorites.post_id) FROM favorites WHERE favorites.post_id = posts.id GROUP BY favorites.post_id)'
     Arel.sql(query)
