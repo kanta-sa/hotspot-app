@@ -1,0 +1,48 @@
+<div class="review-container">
+  <div class="review-header-wrapper">
+    <div class="left">
+      <%= image_tag @post.image.to_s, class: "post-image" %>
+    </div>
+    <div class="right">
+      <div class="post-name">
+        <%= @post.name %>
+      </div>
+      <div class="average-score">
+        <div class="star-rating">
+          <div class="star-rating-front" style="width: <%= @post.review_score_percentage %>%">★★★★★</div>
+          <div class="star-rating-back">★★★★★</div>
+        </div>
+        <div class="average-score-display">
+          <%= @post.avg_score %>点（<%= @post.reviews.count %>件のレビュー）
+        </div>
+      </div>
+      <%= render 'reviews/form', review: @review, post: @post %>
+    </div>
+  </div>
+  
+  <div class="review-items-wrapper">
+    <% @reviews.each do |review| %>
+      <div class="review-item">
+        <div class="left">
+          <div class="img">
+            <% if review.user.image? %>
+              <%= link_to image_tag(review.user.image.to_s, class: "user-image"), user_path(review.user) %>
+            <% else %>
+              <%= link_to image_tag('/images/user.png', class: "user-image"), user_path(review.user) %>
+            <% end %>
+          </div>
+          <p><%= link_to review.user.username, user_path(review.user), class: "nav-link" %></p>
+        </div>
+        <div class="right">
+          <div class="star-rating">
+            <div class="star-rating-front" style="width: <%= review.score*100/5 %>%">★★★★★</div>
+            <div class="star-rating-back">★★★★★</div>
+          </div>
+          <div class="">
+            <%= review.content %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
