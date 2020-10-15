@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   
   def show
     @post = Post.find(params[:id])
-    @comments = @post.comments.page(params[:page]).per(5).order('updated_at DESC')
+    @comments = @post.comments.page(params[:page]).per(10).order('updated_at DESC')
     @comment = @post.comments.build
   end
 
