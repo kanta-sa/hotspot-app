@@ -33,6 +33,7 @@ https://hotspotdb.herokuapp.com/
 * フォロー機能
   * フォロー、フォロワー一覧表示機能
   * Ajaxを使用
+* レビュー機能
 * 検索機能
   * Ransackを使用
 * Rspecによるテスト機能
@@ -44,4 +45,4 @@ https://hotspotdb.herokuapp.com/
     * 都道府県SelectBoxに対する市区町村SelectBoxをAjaxで動的に制御
 
 # ER図
-![ERD](https://user-images.githubusercontent.com/61926786/86127668-40915980-bb1b-11ea-84df-8053a39aa15e.png)
+![ERD](https://user-images.githubusercontent.com/69946893/96080039-26745f00-0ef1-11eb-87df-b29d91592433.png)
