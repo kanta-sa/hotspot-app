@@ -9,7 +9,7 @@
       <%= f.collection_select :prefecture_id_eq_any, Prefecture.all, :id, :name, {include_blank: '都道府県を選択してください'}, {class: "form-control prefecture-search"} %>
     </div>  
     <div class="search-form">
-      <%= f.select( :sorts, {'並び替え': 'updated_at desc', 'いいねが多い順': 'favorites_count desc', 'コメントが多い順': 'comments_count desc', '日付の新しい順': 'updated_at desc', '日付の古い順': 'updated_at asc' },{}, {class: "form-control order-search"})%>
+      <%= f.select( :sorts, {'並び替え': 'updated_at desc', 'いいねが多い順': 'favorites_count desc', 'コメントが多い順': 'comments_count desc', 'レビュー評価の高い順': 'reviews_avg desc', '日付の新しい順': 'updated_at desc', '日付の古い順': 'updated_at asc' },{}, {class: "form-control order-search"})%>
     </div>
     <%= f.submit "検索", class: 'search-btn'%>
     

@@ -26,6 +26,11 @@ class Post < ApplicationRecord
     Arel.sql(query)
   end
   
+  ransacker :reviews_avg do
+    query = '(SELECT AVG(reviews.score) FROM reviews WHERE reviews.post_id = posts.id GROUP BY reviews.post_id)'
+    Arel.sql(query)
+  end
+  
   
   # バリデーション
   validates :name,            presence: true, 
