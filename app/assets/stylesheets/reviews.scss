@@ -160,3 +160,57 @@
     }
   }
 }
+
+@media (max-width: 1150px){
+  .review-container{
+    width: 80%;
+    .review-items-wrapper{
+      .review-item  {
+        width: 80%;
+      }
+    }
+  }
+}
+
+@media (max-width: 700px){
+  .review-container{
+    width: 90%;
+    .review-header-wrapper{
+      display: block;
+      height: auto;
+      .left{
+        width: 90%;
+        height: 175px;
+      }
+      .right{
+        width: 90%;
+        .average-score{
+          .star-rating{
+            font-size: 0.9rem;
+          }
+          &-display{
+            font-size: 0.9rem;
+          }
+        }
+        .review-form-wrapper{
+          p{
+            font-size: 14px;
+          }
+          .rating-box{
+            .main-rating .ratings .fa{
+              font-size: 22px;
+            }
+            .rating-value-display{
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+    .review-items-wrapper{
+      .review-item  {
+        width: 80%;
+      }
+    }
+  }
+}
