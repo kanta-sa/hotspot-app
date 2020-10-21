@@ -14,3 +14,5 @@ ja:
         city: "市区町村"
       comment: 
         content: "コメント"
+      review:
+        score: "評価"
