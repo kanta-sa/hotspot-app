@@ -1,46 +1,7 @@
 <div class="posts-container">
   <% posts.each do |post| %>
     <div class="posts-wrapper">
-      <div class="picture">
-        <%= link_to post.image.to_s, 'data-lightbox': post.image, class: "post-image" do %>
-          <%= image_tag post.image.to_s, class: "post-image" %>
-        <%end %>
-      </div>
-      <div class="post-contents">
-        <div class="left">
-          <div class="img">
-            <% if post.user.image? %>
-              <%= link_to image_tag(post.user.image.to_s, class: "user-image"), user_path(post.user) %>
-            <% else %>
-              <%= link_to image_tag('/images/user.png', class: "user-image"), user_path(post.user) %>
-            <% end %>
-          </div>
-          <p><%= link_to post.user.username, user_path(post.user), class: "nav-link" %></p>
-        </div>
-        <div class="right">
-          <p class="title"><%= post.name %></p>
-          <p><%= post.prefecture.name %><%= post.city.name %></p>
-          <%= link_to "詳細", post_path(post), class: "nav-link show-link" %>
-          <p class="right-text"><%= post.created_at.to_s(:datetime_jp) %></p>
-          <%= render 'posts/score', post: post %>
-          <ul>
-            <li><i class="fa fa-commenting"></i><span class="comment_count"><%= post.comments.count %></span></li>
-            <li>
-              <div id="favorites_buttons_<%= post.id %>">
-                <%= render 'favorites/favorite_button', post: post %>
-              </div>
-            </li>
-            <li>
-              <% if current_user == post.user %>
-                <%= link_to post_path(post), method: :delete, data: { confirm: 'You sure?' } do %>
-                  <i class="fas fa-trash"></i>
-                <% end %>
-              <% end %>
-            </li>
-          </ul>
-          
-        </div>
-      </div>
+      <%= render 'posts/post_contents', post: post %>
     </div>
   <% end %>
   <%= paginate posts %>
