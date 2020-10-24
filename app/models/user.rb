@@ -2,17 +2,16 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   
-  before_save { email.downcase! }
-  # 定数
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  
-  
   # モジュール
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: %i[facebook twitter google_oauth2]
   
   mount_uploader :image, ImageUploader
+  
+  
+  # 定数
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   
   
   # 関連
@@ -31,6 +30,10 @@ class User < ApplicationRecord
   has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
   
   has_many :reviews, dependent: :destroy
+  
+  
+  # フック
+  before_save { email.downcase! }
   
   
   # バリデーション
@@ -58,7 +61,7 @@ class User < ApplicationRecord
     self.followings.include?(other_user)
   end
   
-  def create_notification_follow!(current_user)
+  def create_notification_follow!(current_user) # フォロー通知の作成メソッド
     temp = Notification.where(["visitor_id = ? and visited_id = ? and action = ? ",current_user.id, id, 'follow'])
     if temp.blank?
       notification = current_user.active_notifications.new(

@@ -47,7 +47,7 @@ class Post < ApplicationRecord
     favorites.where(user_id: user.id).exists?
   end
   
-  def create_notification_favorite!(current_user)
+  def create_notification_favorite!(current_user) # いいね通知の作成メソッド
     # すでに「いいね」されているか検索
     temp = Notification.where(["visitor_id = ? and visited_id = ? and post_id = ? and action = ? ", current_user.id, user_id, id, 'favorite'])
     # いいねされていない場合のみ、通知レコードを作成
@@ -65,7 +65,7 @@ class Post < ApplicationRecord
     end
   end
   
-  def create_notification_comment!(current_user, comment_id)
+  def create_notification_comment!(current_user, comment_id) # コメント通知の作成メソッド
     # 自分以外にコメントしている人をすべて取得し、全員に通知を送る
     temp_ids = Comment.select(:user_id).where(post_id: id).where.not(user_id: current_user.id).distinct
     temp_ids.each do |temp_id|
@@ -90,7 +90,7 @@ class Post < ApplicationRecord
     notification.save if notification.valid?
   end
   
-  def avg_score
+  def avg_score # レビューの平均点を求める
     unless self.reviews.empty?
       reviews.average(:score).round(1).to_f
     else
@@ -98,7 +98,7 @@ class Post < ApplicationRecord
     end
   end
   
-  def review_score_percentage
+  def review_score_percentage # レビューの平均点を百分率で求める
     unless self.reviews.empty?
       reviews.average(:score).round(1).to_f*100/5
     else
