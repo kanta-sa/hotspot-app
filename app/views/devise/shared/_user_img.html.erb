@@ -1,0 +1,10 @@
+<div class="left">
+  <div class="img">
+    <% if object.user.image? %>
+      <%= link_to image_tag(object.user.image.to_s, class: "user-image"), user_path(object.user) %>
+    <% else %>
+      <%= link_to image_tag('/images/user.png', class: "user-image"), user_path(object.user) %>
+    <% end %>
+  </div>
+  <p><%= link_to object.user.username, user_path(object.user), class: "nav-link" %></p>
+</div>

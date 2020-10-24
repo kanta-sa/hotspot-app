@@ -15,16 +15,7 @@
   <div class="review-items-wrapper">
     <% @reviews.each do |review| %>
       <div class="review-item">
-        <div class="left">
-          <div class="img">
-            <% if review.user.image? %>
-              <%= link_to image_tag(review.user.image.to_s, class: "user-image"), user_path(review.user) %>
-            <% else %>
-              <%= link_to image_tag('/images/user.png', class: "user-image"), user_path(review.user) %>
-            <% end %>
-          </div>
-          <p><%= link_to review.user.username, user_path(review.user), class: "nav-link" %></p>
-        </div>
+        <%= render 'devise/shared/user_img', object: review %>
         <div class="right">
           <div class="star-rating">
             <div class="star-rating-front" style="width: <%= review.score*100/5 %>%">★★★★★</div>
