@@ -22,15 +22,7 @@
           <p><%= post.prefecture.name %><%= post.city.name %></p>
           <%= link_to "詳細", post_path(post), class: "nav-link show-link" %>
           <p class="right-text"><%= post.created_at.to_s(:datetime_jp) %></p>
-          <div class="average-score">
-            <div class="star-rating">
-              <div class="star-rating-front" style="width: <%= post.review_score_percentage %>%">★★★★★</div>
-              <div class="star-rating-back">★★★★★</div>
-            </div>
-            <div class="average-score-display">
-              <%= post.avg_score %>点（<%= link_to "#{post.reviews.count}件のレビュー", post_reviews_path(post), class: "nav-link" %>）
-            </div>
-          </div>
+          <%= render 'posts/score', post: post %>
           <ul>
             <li><i class="fa fa-commenting"></i><span class="comment_count"><%= post.comments.count %></span></li>
             <li>

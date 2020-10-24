@@ -7,15 +7,7 @@
       <div class="post-name">
         <%= @post.name %>
       </div>
-      <div class="average-score">
-        <div class="star-rating">
-          <div class="star-rating-front" style="width: <%= @post.review_score_percentage %>%">★★★★★</div>
-          <div class="star-rating-back">★★★★★</div>
-        </div>
-        <div class="average-score-display">
-          <%= @post.avg_score %>点（<%= @post.reviews.count %>件のレビュー）
-        </div>
-      </div>
+      <%= render 'reviews/score', post: @post %>
       <%= render 'reviews/form', review: @review, post: @post %>
     </div>
   </div>

@@ -39,15 +39,7 @@
           <i class="fa fa-commenting" aria-hidden="true"></i><span class="comment_count"><%= @post.comments.count %></span>
         </div>
       </div>
-      <div class="average-score">
-        <div class="star-rating">
-          <div class="star-rating-front" style="width: <%= @post.review_score_percentage %>%">★★★★★</div>
-          <div class="star-rating-back">★★★★★</div>
-        </div>
-        <div class="average-score-display">
-          <%= @post.avg_score %>点（<%= link_to "#{@post.reviews.count}件のレビュー", post_reviews_path(@post), class: "nav-link" %>）
-        </div>
-      </div>
+      <%= render 'posts/score', post: @post %>
       <% if user_signed_in? %>
         <div class="comment-form-wrapper">
           <%= form_with(model: [@post, @comment], local: true) do |f| %>

@@ -22,6 +22,7 @@
           <p><%= post.prefecture.name %><%= post.city.name %></p>
           <%= link_to "詳細", post_path(post), class: "nav-link show-link" %>
           <p class="right-text"><%= post.created_at.to_s(:datetime_jp) %></p>
+          <%= render 'posts/score', post: post %>
           <ul>
             <li><i class="fa fa-commenting"></i><span class="comment_count"><%= post.comments.count %></span></li>
             <li>

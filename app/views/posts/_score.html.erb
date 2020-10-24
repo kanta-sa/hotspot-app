@@ -1,0 +1,9 @@
+<div class="average-score">
+  <div class="star-rating">
+    <div class="star-rating-front" style="width: <%= post.review_score_percentage %>%">★★★★★</div>
+    <div class="star-rating-back">★★★★★</div>
+  </div>
+  <div class="average-score-display">
+    <%= post.avg_score %>点（<%= link_to "#{post.reviews.count}件のレビュー", post_reviews_path(post), class: "nav-link" %>）
+  </div>
+</div>
