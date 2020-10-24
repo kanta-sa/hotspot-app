@@ -6,22 +6,19 @@ Rails.application.routes.draw do
       sessions: 'users/sessions',
       omniauth_callbacks: 'users/omniauth_callbacks'
   }
-  resources :users, only: [:show, :edit, :update] do 
-    member do 
-      get :follow
+  resources :users, only: [:show, :edit, :update] do
+    get :follow, on: :member
+  end
+  
+  resources :posts, shallow: true do
+    resource :favorites, only: [:create, :destroy]
+    resources :comments, only: [:create, :destroy]
+    resources :reviews, only: [:index, :create]
+    collection do
+      get :cities_select
+      get :favorites
     end
   end
   resources :relationships, only: [:create, :destroy]
-  
-  resources :posts, shallow: true do
-    collection do
-      get :cities_select
-    end
-    resource :favorites, only: [:create, :destroy]
-    get :favorites, on: :collection
-    resources :comments, only: [:create, :destroy]
-    resources :reviews, only: [:index, :create]
-  end
-  
   resources :notifications, only: :index
 end
