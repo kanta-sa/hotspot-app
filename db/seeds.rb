@@ -1,43 +1,22 @@
-City.create!([
-  {prefecture_id: 47, name: '那覇市'},
-  {prefecture_id: 47, name: '宜野湾市'},
-  {prefecture_id: 47, name: '石垣市'},
-  {prefecture_id: 47, name: '浦添市'},
-  {prefecture_id: 47, name: '名護市'},
-  {prefecture_id: 47, name: '糸満市'},
-  {prefecture_id: 47, name: '沖縄市'},
-  {prefecture_id: 47, name: '豊見城市'},
-  {prefecture_id: 47, name: 'うるま市'},
-  {prefecture_id: 47, name: '宮古島市'},
-  {prefecture_id: 47, name: '南城市'},
-  {prefecture_id: 47, name: '国頭郡国頭村'},
-  {prefecture_id: 47, name: '国頭郡大宜味村'},
-  {prefecture_id: 47, name: '国頭郡東村'},
-  {prefecture_id: 47, name: '国頭郡今帰仁村'},
-  {prefecture_id: 47, name: '国頭郡本部町'},
-  {prefecture_id: 47, name: '国頭郡恩納村'},
-  {prefecture_id: 47, name: '国頭郡宜野座村'},
-  {prefecture_id: 47, name: '国頭郡金武町'},
-  {prefecture_id: 47, name: '国頭郡伊江村'},
-  {prefecture_id: 47, name: '中頭郡読谷村'},
-  {prefecture_id: 47, name: '中頭郡嘉手納町'},
-  {prefecture_id: 47, name: '中頭郡北谷町'},
-  {prefecture_id: 47, name: '中頭郡北中城村'},
-  {prefecture_id: 47, name: '中頭郡中城村'},
-  {prefecture_id: 47, name: '中頭郡西原町'},
-  {prefecture_id: 47, name: '島尻郡与那原町'},
-  {prefecture_id: 47, name: '島尻郡南風原町'},
-  {prefecture_id: 47, name: '島尻郡渡嘉敷村'},
-  {prefecture_id: 47, name: '島尻郡座間味村'},
-  {prefecture_id: 47, name: '島尻郡粟国村'},
-  {prefecture_id: 47, name: '島尻郡渡名喜村'},
-  {prefecture_id: 47, name: '島尻郡南大東村'},
-  {prefecture_id: 47, name: '島尻郡北大東村'},
-  {prefecture_id: 47, name: '島尻郡伊平屋村'},
-  {prefecture_id: 47, name: '島尻郡伊是名村'},
-  {prefecture_id: 47, name: '島尻郡久米島町'},
-  {prefecture_id: 47, name: '島尻郡八重瀬町'},
-  {prefecture_id: 47, name: '宮古郡多良間村'},
-  {prefecture_id: 47, name: '八重山郡竹富町'},
-  {prefecture_id: 47, name: '八重山郡与那国町'},
-  ])
+require 'csv'
+
+#使用するデータ(CSVファイルの列)を指定
+CSVROW_PREFID = 1
+CSVROW_PREFNAME = 2
+CSVROW_CITYNAME = 3
+
+CSV.foreach('db/csv/prefectures_cities.csv') do |row|
+  prefecture_id = row[CSVROW_PREFID]
+  prefecture_name = row[CSVROW_PREFNAME]
+  city_name = row[CSVROW_CITYNAME]
+
+  Prefecture.find_or_create_by(name: prefecture_name)
+  City.find_or_create_by(name: city_name, prefecture_id: prefecture_id)
+end
+
+User.create!(username: 'ゲストユーザー',
+             email: 'guest@example.com',
+             password: '12345678',
+             password_confirmation: '12345678',
+             image: open("./db/fixtures/guest_user.jpg"),
+             guest: true) 
