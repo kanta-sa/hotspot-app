@@ -63,33 +63,40 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-#ログイン機能
+# ログイン機能
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
 
-#日本語化
+# 日本語化
 gem 'rails-i18n'
 gem 'devise-i18n'
 
+# 画像の投稿
 gem 'carrierwave'
 gem 'fog-aws'
 gem 'mini_magick'
 
+# jQueryの導入
 gem "jquery-rails"
 
+# ページネーション
 gem 'kaminari'
 
+# Amazon Simple Storage Service
 gem "aws-sdk-s3", require: false
+
+# flashメッセージの見栄え
+gem 'toastr-rails'
+
+# 検索機能
+gem 'ransack'
+
+# パンくずの実装
+gem 'gretel'
 
 group :production do
   gem 'rails_12factor'
 end
-
-gem 'toastr-rails'
-
-gem 'ransack'
-
-gem 'gretel'
