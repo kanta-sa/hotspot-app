@@ -12,9 +12,10 @@ for(i=0; i<stars.length; i++){
 $('#rating-value-display').text("0")
 
 <!--エラーメッセージ-->
-if(<%= @flg %>){
-  $('#score-err').text("評価を入力してください")
-}
-else{
-  $('#score-err').text("")
-}
+$err = $('#review-err')
+$err.empty()
+<% if @object.errors.any? %>
+  <% @object.errors.full_messages.each do |msg| %>
+    $err.append( '<li><%= msg %></li>')
+  <% end %>
+<% end %>

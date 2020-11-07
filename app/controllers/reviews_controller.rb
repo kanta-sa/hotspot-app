@@ -10,17 +10,17 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.user_id = current_user.id
     if @review.save
-      @flg = false
+      @object = @review
       render :review
     else
-      @flg = true
+      @object = @review
       render :review
     end
   end
   
   def destroy
     @review = Review.find(params[:id])
-    @flg = false
+    @object = @review
     return unless @review.user_id == current_user.id
     
     render :review if @review.destroy

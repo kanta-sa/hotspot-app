@@ -5,5 +5,6 @@ class Review < ApplicationRecord
   
   
   # バリデーション
-  validates :score, presence: true
+  validates :score,     presence: true
+  validates :content,   length: { maximum: 255 }
 end

@@ -1,7 +1,8 @@
 <div class="review-form-wrapper">
   <p>レビューを書く</p>
   
-  <p class="red-text" id="score-err"></li>
+  <!--<p class="red-text" id="score-err"></li>-->
+  <ul id="review-err"></ul>
   
   <div class="rating-box">
     <%= form_with model: review, url: post_reviews_path(post), remote: true do |f| %>
