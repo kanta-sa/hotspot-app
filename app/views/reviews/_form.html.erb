@@ -1,12 +1,10 @@
 <div class="review-form-wrapper">
   <p>レビューを書く</p>
   
-  <% review.errors.full_messages.each do |msg| %>
-    <li class="red-text"><%= msg %></li>
-  <% end %>
+  <p class="red-text" id="score-err"></li>
   
   <div class="rating-box">
-    <%= form_with model: review, url: post_reviews_path(post), local: true do |f| %>
+    <%= form_with model: review, url: post_reviews_path(post), remote: true do |f| %>
       <div class="main-rating">
         <div class="ratings">
           <span class="fa fa-star-o" id="star"></span>

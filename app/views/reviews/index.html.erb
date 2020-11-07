@@ -7,26 +7,15 @@
       <div class="post-name">
         <%= @post.name %>
       </div>
-      <%= render 'reviews/score', post: @post %>
+      <div id="review-score">
+        <%= render 'reviews/score', post: @post %>
+      </div>
       <%= render 'reviews/form', review: @review, post: @post %>
     </div>
   </div>
   
-  <div class="review-items-wrapper">
-    <% @reviews.each do |review| %>
-      <div class="review-item">
-        <%= render 'devise/shared/user_img', object: review %>
-        <div class="right">
-          <div class="star-rating">
-            <div class="star-rating-front" style="width: <%= review.score*100/5 %>%">★★★★★</div>
-            <div class="star-rating-back">★★★★★</div>
-          </div>
-          <div class="">
-            <%= review.content %>
-          </div>
-        </div>
-      </div>
-    <% end %>
+  <div id="review-items-wrapper">
+    <%= render 'reviews/reviews', reviews: @reviews %>
   </div>
 </div>
 

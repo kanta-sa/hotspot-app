@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.red-text{
+#score-err{
   color: red;
 }
 
@@ -106,7 +106,7 @@
     }
   }
   
-  .review-items-wrapper{
+  #review-items-wrapper{
     width: 100%;
     margin-top: 3%;
     .review-item{
@@ -164,7 +164,7 @@
 @media (max-width: 1150px){
   .review-container{
     width: 80%;
-    .review-items-wrapper{
+    #review-items-wrapper{
       .review-item  {
         width: 80%;
       }
@@ -207,7 +207,7 @@
         }
       }
     }
-    .review-items-wrapper{
+    #review-items-wrapper{
       .review-item  {
         width: 80%;
       }

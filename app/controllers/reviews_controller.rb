@@ -9,12 +9,14 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.user_id = current_user.id
+    @post = Post.find(params[:post_id])
+    @reviews = @post.reviews
     if @review.save
-      redirect_to post_reviews_path(@review.post)
+      @flg = false
+      render :review
     else
-      @post = Post.find(params[:post_id])
-      @reviews = @post.reviews
-      render "index"
+      @flg = true
+      render :review
     end
   end
   

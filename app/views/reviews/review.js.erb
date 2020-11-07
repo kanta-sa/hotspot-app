@@ -1,0 +1,20 @@
+$('#review-items-wrapper').html("<%= j(render 'reviews/reviews', reviews: @reviews) %>")
+$('#review-score').html("<%= j(render 'reviews/score', post: @post) %>")
+
+<!--フォームを初期化-->
+$("#review_content").val('')
+$('#rating-value').val(null)
+$stars = $('.ratings').children()
+for(i=0; i<stars.length; i++){
+  $stars[i].classList.remove("fa-star");
+  $stars[i].classList.add("fa-star-o");
+}
+$('#rating-value-display').text("0")
+
+<!--エラーメッセージ-->
+if(<%= @flg %>){
+  $('#score-err').text("評価を入力してください")
+}
+else{
+  $('#score-err').text("")
+}

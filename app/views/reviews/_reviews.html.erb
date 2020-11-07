@@ -1,0 +1,14 @@
+<% reviews.each do |review| %>
+  <div class="review-item">
+    <%= render 'devise/shared/user_img', object: review %>
+    <div class="right">
+      <div class="star-rating">
+        <div class="star-rating-front" style="width: <%= review.score*100/5 %>%">★★★★★</div>
+        <div class="star-rating-back">★★★★★</div>
+      </div>
+      <div class="">
+        <%= review.content %>
+      </div>
+    </div>
+  </div>
+<% end %>
