@@ -9,8 +9,6 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.user_id = current_user.id
-    @post = Post.find(params[:post_id])
-    @reviews = @post.reviews
     if @review.save
       @flg = false
       render :review
@@ -18,6 +16,14 @@ class ReviewsController < ApplicationController
       @flg = true
       render :review
     end
+  end
+  
+  def destroy
+    @review = Review.find(params[:id])
+    @flg = false
+    return unless @review.user_id == current_user.id
+    
+    render :review if @review.destroy
   end
   
   private

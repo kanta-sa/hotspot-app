@@ -1,5 +1,5 @@
-$('#review-items-wrapper').html("<%= j(render 'reviews/reviews', reviews: @reviews) %>")
-$('#review-score').html("<%= j(render 'reviews/score', post: @post) %>")
+$('#review-items-wrapper').html("<%= j(render 'reviews/reviews', reviews: @review.post.reviews) %>")
+$('#review-score').html("<%= j(render 'reviews/score', post: @review.post) %>")
 
 <!--フォームを初期化-->
 $("#review_content").val('')

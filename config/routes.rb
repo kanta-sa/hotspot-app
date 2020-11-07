@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :posts, shallow: true do
     resource :favorites, only: [:create, :destroy]
     resources :comments, only: [:create, :destroy]
-    resources :reviews, only: [:index, :create]
+    resources :reviews, only: [:index, :create, :destroy]
     collection do
       get :cities_select
       get :favorites

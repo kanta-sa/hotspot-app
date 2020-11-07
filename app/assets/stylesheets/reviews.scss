@@ -113,7 +113,7 @@
       width: 50%;
       margin: 0 auto;
       border: 1px solid black;
-      height: 120px;
+      height: 140px;
       display: flex;
       justify-content: space-between;
       & + .review-item{
@@ -146,8 +146,9 @@
         }
       }
       .right{
-        width: 50%;
-        margin: 2% 0;
+        width: 60%;
+        margin: 1% 0;
+        position: relative;
         .star-rating{
           font-size: 0.9rem;
           margin: 2% 0;
@@ -155,6 +156,16 @@
         p{
           font-size: 0.9rem;
           word-break: normal;
+        }
+        .middle{
+          font-size: 0.9rem;
+          word-wrap: break-word;
+        }
+        .bottom{
+        font-size: 0.8rem;
+        position: absolute;
+        right: 2px;
+        bottom: 0;
         }
       }
     }

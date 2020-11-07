@@ -6,8 +6,16 @@
         <div class="star-rating-front" style="width: <%= review.score*100/5 %>%">★★★★★</div>
         <div class="star-rating-back">★★★★★</div>
       </div>
-      <div class="">
+      <p class="middle">
         <%= review.content %>
+      </p>
+      <div class="bottom">
+        <%= review.created_at.strftime("%Y-%m-%d %H:%M") %>
+        <% if current_user == review.user %>
+          <%= link_to review_path(review), method: :delete, data: { confirm: 'You sure?' }, remote: true do %>
+            <i class="fas fa-trash"></i>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>
