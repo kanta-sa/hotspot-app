@@ -94,3 +94,6 @@ gem 'gretel'
 group :production do
   gem 'rails_12factor'
 end
+
+# Google Map
+gem 'geocoder'

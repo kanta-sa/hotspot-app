@@ -44,6 +44,8 @@
   </div>
 <% end %>
 
+<%= render 'posts/gmap' %>
+
 <script type="text/javascript">
   $('#post_image').bind('change', function() {
     var size_in_megabytes = this.files[0].size/1024/1024;
@@ -73,5 +75,5 @@
       reader.readAsDataURL(file);
     });
   });
+  
 </script>
-
