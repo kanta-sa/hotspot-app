@@ -32,6 +32,12 @@ class Post < ApplicationRecord
   end
   
   
+  # フック
+  before_validation :join_address
+  geocoded_by :address
+  after_validation :geocode
+  
+  
   # バリデーション
   validates :name,            presence: true, 
                               length: {maximum: 20}
@@ -104,5 +110,14 @@ class Post < ApplicationRecord
     else
       0.0
     end
+  end
+  
+  # メソッド(Private)
+
+  private
+  
+  def join_address
+    return if prefecture_id.nil? || city_id.nil?
+    self.address = [Prefecture.find_by(id: prefecture_id).name, City.find_by(id: city_id).name].join('')
   end
 end
