@@ -19,6 +19,11 @@
         </div>
       </li>
       <li>
+        <%= link_to inn_api_post_path(post), class: "nav-link" do %>
+          <i class="fas fa-suitcase-rolling"></i>
+        <% end %>
+      </li>
+      <li>
         <% if current_user == post.user %>
           <%= link_to post_path(post), method: :delete, data: { confirm: 'You sure?' } do %>
             <i class="fas fa-trash"></i>

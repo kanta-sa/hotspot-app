@@ -98,8 +98,11 @@
           margin-top: 2%;
           li{
             margin-right: 5%;
-            .fa-commenting, .fa-trash{
+            .fa-commenting, .fa-trash, .fa-suitcase-rolling{
               font-size: 1.1rem;
+            }
+            .nav-link .fa-suitcase-rolling{
+              color: rgb(0, 170, 255);
             }
           }
         }

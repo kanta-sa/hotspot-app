@@ -1,0 +1,57 @@
+.inn-container{
+  width: 70%;
+  margin: 2% auto;
+  .title-address{
+    p{
+      color: black;
+      font-size: 24px;
+    }
+    span{
+      font-weight: bold;
+    }
+  }
+  
+  .inn-wrapper{
+    box-shadow: 0 2px 2px rgba(0,0,0,0.2), 0 -4px 5px -2px #8c8041 inset;
+    background-color: #fff8cf;
+    margin: 4% 0;
+    display: flex;
+    justify-content: space-between;
+    height: 340px;
+    .left{
+      width: 30%;
+      margin: 5px 2%;
+      img{
+        width: 250px;
+        height: 160px;
+      }
+    }
+    .right{
+      width: 62%;
+      margin: 1% 2%;
+      .nav-link{
+        color: rgb(0, 170, 255);
+      }
+      h2{
+        margin-bottom: 10px;
+      }
+      .information{
+        .column{
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 1%;
+          .first{
+            width: 15%;
+            font-weight: bold;
+          }
+          .second{
+            width: 80%;
+          }
+        }
+      }
+      .add-info{
+        margin-top: 15px;
+      }
+    }
+  }
+}

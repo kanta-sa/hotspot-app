@@ -1,0 +1,43 @@
+<div class="inn-container">
+  <div class="title-address">
+    <p><span><%= @prefecture %><%= @city %></span>周辺の宿泊施設</p>
+  </div>
+  <% @inns.each do |inn| %>
+    <div class="inn-wrapper">
+      <% hotel = inn["hotel"][0]["hotelBasicInfo"] %>
+      <div class="left">
+        <img src="<%= hotel["hotelImageUrl"] %>" class="hotel">
+        <img src="<%= hotel["roomImageUrl"] %>" class="room">
+      </div>
+      <div class="right">
+        <%= link_to hotel["hotelInformationUrl"], target: :_blank, class: "nav-link" do %>
+          <h2><%= hotel["hotelName"] %></h2>
+        <% end %>
+        <div class="information">
+          <div class="column">
+            <p class="first">住所</p>
+            <p class="second"><%= hotel["address1"] %><%= hotel["address2"] %></p>
+          </div>
+          <div class="column">
+            <p class="first">最寄り駅</p>
+            <p class="second"><%= hotel["nearestStation"] %>駅</p>
+          </div>
+          <div class="column">
+            <p class="first">アクセス</p>
+            <p class="second"><%= hotel["access"] %></p>
+          </div>
+          <div class="column">
+            <p class="first">駐車場</p>
+            <p class="second"><%= hotel["parkingInformation"] %></p>
+          </div>
+          <div class="column">
+            <p class="first">電話番号</p>
+            <p class="second"><%= hotel["telephoneNo"] %></p>
+          </div>
+        </div>
+        <p class="add-info"><%= hotel["hotelSpecial"] %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
+

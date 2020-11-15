@@ -57,11 +57,14 @@
       .content{
         display: flex;
         align-items: center;
-        .content-left{
+        .content-left, .content-middle{
           margin-right: 3%;
         }
-        .fa-commenting{
+        .fa-commenting, .fa-suitcase-rolling{
           font-size: 1.4rem;
+        }
+        .nav-link .fa-suitcase-rolling{
+          color: rgb(0, 170, 255);
         }
       }
     }

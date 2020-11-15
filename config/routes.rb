@@ -18,6 +18,9 @@ Rails.application.routes.draw do
       get :cities_select
       get :favorites
     end
+    member do
+      get :inn_api
+    end
   end
   resources :relationships, only: [:create, :destroy]
   resources :notifications, only: :index
