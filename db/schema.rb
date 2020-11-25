@@ -123,6 +123,7 @@ ActiveRecord::Schema.define(version: 2020_11_09_100715) do
   add_foreign_key "favorites", "users"
   add_foreign_key "posts", "cities"
   add_foreign_key "posts", "prefectures"
+  add_foreign_key "posts", "users"
   add_foreign_key "relationships", "users"
   add_foreign_key "relationships", "users", column: "follow_id"
   add_foreign_key "reviews", "posts"
