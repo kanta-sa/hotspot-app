@@ -42,7 +42,6 @@ group :development, :test do
   gem "rspec-rails"
   gem "factory_bot_rails"
   gem "capybara"
-  gem 'dotenv-rails'
 end
 
 group :development do
@@ -91,6 +90,13 @@ gem 'ransack'
 # パンくずの実装
 gem 'gretel'
 
+# 環境変数の管理
+gem 'dotenv-rails'
+
 group :production do
   gem 'rails_12factor'
+end
+
+group :production, :staging do
+  gem 'unicorn'
 end
