@@ -5,15 +5,20 @@
 旅行先で、観光する場所を選ぶ際にSNSを使い調べる機会が増えてきてると思います。そこで、観光地を調べるのに特化したアプリが有ったらいいなと思い、制作しました。
 
 # URL 
-https://hotspotdb.herokuapp.com/
+https://www.hotspotdb.work
 * ログインページから【ゲストユーザー】として簡単ログインできます。
 
 # 使用技術
 * Ruby 2.5.8, Rails 5.2.4
-* MySQL 5.5.62
-* Puma
 * Sass, jQuery
-* Amazon S3
+* AWS (EC2, RDS for MySQL 5.7.26, S3, VPC, Route53, ALB, ACM)
+* Docker
+* CircleCI CI/CD
+* Capistrano
+* RSpec
+
+# AWS構成図
+![aws](https://user-images.githubusercontent.com/61926786/101277386-8273a980-37f7-11eb-8d46-5ef872f24d02.png)
 
 # 機能一覧
 * ユーザー登録
