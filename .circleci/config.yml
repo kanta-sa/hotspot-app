@@ -7,13 +7,13 @@ jobs:
           - BUNDLER_VERSION: 2.1.4
           - RAILS_ENV: 'test'
       - image: circleci/mysql:5.7.26
-          environment:
-            MYSQL_ALLOW_EMPTY_PASSWORD: true
-            MYSQL_ROOT_PASSWORD: ''
-            MYSQL_DATABASE: hotspotdb_test
-            MYSQL_HOST: 127.0.0.1
-            MYSQL_ROOT_HOST: '%'
-            MYSQL_USER: root
+        environment:
+          MYSQL_ALLOW_EMPTY_PASSWORD: true
+          MYSQL_ROOT_PASSWORD: ''
+          MYSQL_DATABASE: hotspotdb_test
+          MYSQL_HOST: 127.0.0.1
+          MYSQL_ROOT_HOST: '%'
+          MYSQL_USER: root
 
     working_directory: ~/hotspot-app
 
