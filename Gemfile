@@ -46,6 +46,8 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
+  # CircleCI使用時に必要
+  gem 'rspec_junit_formatter'
 end
 
 group :development do
