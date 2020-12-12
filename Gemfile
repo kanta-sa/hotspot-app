@@ -42,7 +42,12 @@ group :development, :test do
   gem "rspec-rails"
   gem "factory_bot_rails"
   gem "capybara"
-  gem 'dotenv-rails'
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  # CircleCI使用時に必要
+  gem 'rspec_junit_formatter'
 end
 
 group :development do
@@ -91,9 +96,17 @@ gem 'ransack'
 # パンくずの実装
 gem 'gretel'
 
+# 環境変数の管理
+gem 'dotenv-rails'
+
+# Google Map
+gem 'geocoder'
+
 group :production do
   gem 'rails_12factor'
 end
 
-# Google Map
-gem 'geocoder'
+group :production, :staging do
+  gem 'unicorn'
+end
+

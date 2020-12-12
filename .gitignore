@@ -31,3 +31,5 @@
 /.idea
 .rakeTasks
 .generators
+
+/mysql_data
