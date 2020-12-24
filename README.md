@@ -10,8 +10,6 @@
 
 
 # URL 
-https://hotspotdb.herokuapp.com/
-
 https://www.hotspotdb.work
 * ログインページから【ゲストユーザー】として簡単ログインできます。
 
