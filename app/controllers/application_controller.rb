@@ -20,11 +20,11 @@ class ApplicationController < ActionController::Base
   end
   
   def after_update_path_for(*)
-    user_path(@user)
+    user_path(current_user)
   end
   
   def after_sign_in_path_for(resource)
-    user_path(@user) # ログイン後に遷移するpathを設定
+    user_path(current_user) # ログイン後に遷移するpathを設定
   end
 
   def after_sign_out_path_for(resource)
