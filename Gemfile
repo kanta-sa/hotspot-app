@@ -102,6 +102,9 @@ gem 'dotenv-rails'
 # Google Map
 gem 'geocoder'
 
+# デバッグ
+gem 'pry-rails'
+
 group :production do
   gem 'rails_12factor'
 end
